@@ -1,0 +1,24 @@
+// General
+@import 'fonts/font';
+@import 'tools/variables';
+
+// Libs
+@import '~bootstrap/scss/bootstrap';
+
+// Components
+@import 'components/header';
+
+// Pages
+@import 'home/home_index';
+
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: $raleway-regular;
+    font-size: 1.6rem;
+    overflow-x: hidden;
+    width: 100vw;
+}

@@ -1,0 +1,76 @@
+#carousel-home {
+    height: 100vh;
+    margin-left: -15px;
+    width: 100vw;
+    .carousel-indicators, .carousel-indicators-numbers {
+        flex-direction: column;
+        left: unset;
+        margin: 0;
+        margin-right: 5rem;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .carousel-indicators {
+        right: 45px;
+        li {
+            background: $white;
+            height: 5px;
+            margin-bottom: 2.5rem;
+            margin-left: auto;
+            margin-top: 2.5rem;
+            width: 50px;
+            -webkit-transition: width .2s ease-out;
+            -moz-transition: width .2s ease-out;
+            transition: width .2s ease-out;
+            &.active {
+                width: 100px;
+            }
+            span {
+                color: $white;
+                display: inline-block;
+                font-size: 3rem;
+                font-family: $raleway-bold;
+                height: 10px;
+                right: 0;
+                position: absolute;
+                top: -10px;
+                width: 100%;
+            }
+        }
+    }
+    .carousel-indicators-numbers {
+        bottom: 10px;
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin-left: 15%;
+        padding-left: 0;
+        position: absolute;
+        right: 0;
+        z-index: 15;
+        li {
+            color: $white;
+            font-family: $raleway-bold;
+            font-size: 3.5rem;
+            &:first-child {
+                margin-top: -24px;
+            }
+            &:nth-child(2) {
+                margin-top: 3px;
+            }
+            &:last-child {
+                margin-top: -3px;
+            }
+        }
+    }
+    .img {
+        background-position-x: center;
+        background-position-y: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+    }
+}
