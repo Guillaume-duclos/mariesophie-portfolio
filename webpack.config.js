@@ -138,14 +138,11 @@ if (process.env.NODE_ENV === 'production') {
     new PurifyCSSPlugin({
       minimize: true,
       paths: glob.sync([
-        path.join(__dirname, 'web/index.html'),
+        path.join(__dirname, 'web/**/*.html'),
+        path.join(__dirname, 'src/views/**/*.html'),
         path.join(__dirname, 'src/assets/**/*.js'),
-        path.join(__dirname, 'src/react/**/*.js'),
         path.join(__dirname, 'src/assets/**/*.scss'),
-      ]),
-      purifyOptions: {
-        whitelist: ['*simplebar*']
-      }
+      ])
     }),
     new AssetsCompressionPlugin({
       algorithm: 'gzip',
