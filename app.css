@@ -6359,6 +6359,25 @@ header {
       header .navbar .nav-item:hover::after {
         width: 100%; }
 
+.parallax {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.parallax__layer--base {
+  transform: translateZ(0); }
+
+.parallax__layer--back {
+  transform: translateZ(-1px); }
+
 .scroll-down-wrap, .scroll-down-wrap.no-border {
   bottom: 20px;
   left: 50%;
@@ -6421,7 +6440,7 @@ header {
   animation: nudgeMouse 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite; }
 
 .scroll-down-wrap.no-border .section-down-arrow::after, .slider-down-arrow.no-border::after {
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.7);
   border-radius: 30px;
   content: '';
   display: block;
@@ -6629,6 +6648,53 @@ header {
     background-size: cover;
     height: 100vh;
     width: 100%; }
+
+.portfolio-home {
+  height: 100vh;
+  overflow: hidden; }
+  .portfolio-home a {
+    color: #2a50fa;
+    font-family: "Raleway-Bold-Italic";
+    font-size: 2rem;
+    min-height: 6rem; }
+    .portfolio-home a::after {
+      background: #2a50fa;
+      display: inline-block;
+      content: '';
+      height: 5px;
+      margin-bottom: 15px;
+      width: 0;
+      -webkit-transition: width .2s ease-out;
+      -moz-transition: width .2s ease-out;
+      transition: width .2s ease-out; }
+    .portfolio-home a:hover {
+      color: #2a50fa;
+      text-decoration: none; }
+      .portfolio-home a:hover::after {
+        width: 100%; }
+  .portfolio-home h1 {
+    color: #f6f2ee;
+    font-family: "Raleway-Bold";
+    font-size: 20rem;
+    padding-left: 400px;
+    margin: 0; }
+  .portfolio-home h3 {
+    color: #2b51fa;
+    display: inline-block;
+    font-size: 3rem; }
+    .portfolio-home h3::after {
+      background: #00ffff;
+      content: '';
+      display: inline-block;
+      height: 1px;
+      margin-bottom: 10px;
+      width: 100%; }
+  .portfolio-home p .highlight {
+    background: #2b51fa;
+    color: #00ffff; }
+  .portfolio-home .brush {
+    height: 65vh;
+    margin-top: -4rem; }
 
 html {
   font-size: 10px; }

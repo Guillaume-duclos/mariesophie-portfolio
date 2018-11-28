@@ -11315,7 +11315,7 @@ module.exports = __webpack_require__(4);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function($) {
 
 __webpack_require__(5);
 
@@ -11338,9 +11338,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // Import styles
 (0, _domready2.default)(function () {
   _lazysizes2.default.init();
+
+  $('.carousel-indicators li').click(function (e) {
+    $('#carousel-home').carousel(parseInt(e.target.getAttribute('data-section-to')));
+  });
 });
 
 // Libs imports
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 5 */
