@@ -67,7 +67,7 @@
 }
 
 .scroll-down-wrap.no-border .section-down-arrow::after, .slider-down-arrow.no-border::after {
-    border: 2px solid rgba(255, 255, 255 ,.5);
+    border: 2px solid rgba($white, .7);
     border-radius: 30px;
     content: '';
     display: block;
@@ -84,7 +84,7 @@
 }
 
 .scroll-down-wrap.no-border:hover .section-down-arrow::before, .slider-down-arrow.no-border:hover::before {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba($white, 1);
 }
 
 .scroll-down-wrap.no-border:hover .nectar-scroll-icon-path, .slider-down-arrow.no-border:hover .nectar-scroll-icon-path {
@@ -95,7 +95,7 @@
 }
 
 .scroll-down-wrap.no-border .section-down-arrow:before, .slider-down-arrow.no-border:before {
-    background-color: rgba(255, 255, 255, .7);
+    background-color: rgba($white, .7);
     border-radius: 10px;
     content: '';
     display: block;

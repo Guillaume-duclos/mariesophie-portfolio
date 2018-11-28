@@ -1,0 +1,58 @@
+.portfolio-home {
+    height: 100vh;
+    overflow: hidden;
+    a {
+        color: $blue-secondary;
+        font-family: $raleway-bold-italic;
+        font-size: 2rem;
+        min-height: 6rem;
+        &::after {
+            background: $blue-secondary;
+            display: inline-block;
+            content:'';
+            height: 5px;
+            margin-bottom: 15px;
+            width: 0;
+            -webkit-transition: width .2s ease-out;
+            -moz-transition: width .2s ease-out;
+            transition: width .2s ease-out;
+        }
+        &:hover {
+            color: $blue-secondary;
+            text-decoration: none;
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+    h1 {
+        color: $h1;
+        font-family: $raleway-bold;
+        font-size: 20rem;
+        padding-left: 400px;
+        margin: 0;
+    }
+    h3 {
+        color: $blue;
+        display: inline-block;
+        font-size: 3rem;
+        &::after {
+            background: $cyan;
+            content: '';
+            display: inline-block;
+            height: 1px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+    }
+    p {
+        .highlight {
+            background: $blue;
+            color: $cyan;
+        }
+    }
+    .brush {
+        height: 65vh;
+        margin-top: -4rem;
+    }
+}
