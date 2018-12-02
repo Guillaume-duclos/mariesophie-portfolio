@@ -1,0 +1,19 @@
+.web-home {
+    height: 100vh;
+    overflow: hidden;
+    h2 {
+        color: $gold;
+        font-family: $raleway-bold;
+        font-size: 18rem;
+        margin-bottom: -24rem;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+    img {
+        display: block;
+        height: 70vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

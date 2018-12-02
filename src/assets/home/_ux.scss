@@ -1,0 +1,42 @@
+.ux-home {
+    height: 100vh;
+    overflow: hidden;
+    h2 {
+        color: $peach;
+        font-family: $raleway-bold;
+        font-size: 18rem;
+        margin-bottom: -12rem;
+    }
+    .artiste {
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+    }
+    .ipad-onepage {
+        position: relative;
+        .ipad {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 45%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        .one-page {
+            bottom: 10%;
+            left: 50%;
+            position: absolute;
+            width: 70%;
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+    }
+    .ux-text {
+        margin-top: -5rem;
+    }
+}

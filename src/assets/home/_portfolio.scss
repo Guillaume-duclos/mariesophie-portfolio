@@ -32,27 +32,18 @@
         padding-left: 400px;
         margin: 0;
     }
-    h3 {
-        color: $blue;
-        display: inline-block;
-        font-size: 3rem;
-        &::after {
-            background: $cyan;
-            content: '';
-            display: inline-block;
-            height: 1px;
-            margin-bottom: 10px;
-            width: 100%;
-        }
-    }
-    p {
-        .highlight {
-            background: $blue;
-            color: $cyan;
-        }
-    }
     .brush {
         height: 65vh;
         margin-top: -4rem;
+    }
+    .photos {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        img {
+            width: 465px;
+        }
     }
 }

@@ -6649,6 +6649,12 @@ header {
     height: 100vh;
     width: 100%; }
 
+footer h3 {
+  color: #9c9c9c;
+  font-family: "Raleway-Bold";
+  font-size: 7rem;
+  text-align: center; }
+
 .portfolio-home {
   height: 100vh;
   overflow: hidden; }
@@ -6678,23 +6684,109 @@ header {
     font-size: 20rem;
     padding-left: 400px;
     margin: 0; }
-  .portfolio-home h3 {
-    color: #2b51fa;
-    display: inline-block;
-    font-size: 3rem; }
-    .portfolio-home h3::after {
-      background: #00ffff;
-      content: '';
-      display: inline-block;
-      height: 1px;
-      margin-bottom: 10px;
-      width: 100%; }
-  .portfolio-home p .highlight {
-    background: #2b51fa;
-    color: #00ffff; }
   .portfolio-home .brush {
     height: 65vh;
     margin-top: -4rem; }
+  .portfolio-home .photos {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    .portfolio-home .photos img {
+      width: 465px; }
+
+.ux-home {
+  height: 100vh;
+  overflow: hidden; }
+  .ux-home h2 {
+    color: #f8dab5;
+    font-family: "Raleway-Bold";
+    font-size: 18rem;
+    margin-bottom: -12rem; }
+  .ux-home .artiste img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%; }
+  .ux-home .ipad-onepage {
+    position: relative; }
+    .ux-home .ipad-onepage .ipad {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 45%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      transform: translateY(-50%); }
+    .ux-home .ipad-onepage .one-page {
+      bottom: 10%;
+      left: 50%;
+      position: absolute;
+      width: 70%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      transform: translateX(-50%); }
+  .ux-home .ux-text {
+    margin-top: -5rem; }
+
+.web-home {
+  height: 100vh;
+  overflow: hidden; }
+  .web-home h2 {
+    color: #f1e6d8;
+    font-family: "Raleway-Bold";
+    font-size: 18rem;
+    margin-bottom: -24rem;
+    text-align: center;
+    position: relative;
+    z-index: 2; }
+  .web-home img {
+    display: block;
+    height: 70vh;
+    margin-left: auto;
+    margin-right: auto; }
+
+a.discover-link {
+  color: #2a50fa;
+  font-family: "Raleway-Bold-Italic";
+  font-size: 2rem;
+  min-height: 6rem; }
+  a.discover-link::after {
+    background: #2a50fa;
+    display: inline-block;
+    content: '';
+    height: 5px;
+    margin-bottom: 15px;
+    width: 0;
+    -webkit-transition: width .2s ease-out;
+    -moz-transition: width .2s ease-out;
+    transition: width .2s ease-out; }
+  a.discover-link:hover {
+    color: #2a50fa;
+    text-decoration: none; }
+    a.discover-link:hover::after {
+      width: 100%; }
+
+h3.entry-section {
+  color: #2b51fa;
+  display: inline-block;
+  font-size: 3rem; }
+  h3.entry-section::after {
+    background: #00ffff;
+    content: '';
+    display: inline-block;
+    height: 1px;
+    margin-bottom: 10px;
+    width: 100%; }
+
+p .highlight {
+  background: #2b51fa;
+  color: #00ffff; }
+
+p .highlight2 {
+  background: #b1edee;
+  color: #dadada; }
 
 html {
   font-size: 10px; }

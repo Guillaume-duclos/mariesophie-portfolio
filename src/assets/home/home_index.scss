@@ -1,2 +1,55 @@
 @import 'carousel';
+@import 'footer';
 @import 'portfolio';
+@import 'ux';
+@import 'web';
+
+a.discover-link {
+    color: $blue-secondary;
+    font-family: $raleway-bold-italic;
+    font-size: 2rem;
+    min-height: 6rem;
+    &::after {
+        background: $blue-secondary;
+        display: inline-block;
+        content:'';
+        height: 5px;
+        margin-bottom: 15px;
+        width: 0;
+        -webkit-transition: width .2s ease-out;
+        -moz-transition: width .2s ease-out;
+        transition: width .2s ease-out;
+    }
+    &:hover {
+        color: $blue-secondary;
+        text-decoration: none;
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+h3.entry-section {
+    color: $blue;
+    display: inline-block;
+    font-size: 3rem;
+    &::after {
+        background: $cyan;
+        content: '';
+        display: inline-block;
+        height: 1px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
+
+p {
+    .highlight {
+        background: $blue;
+        color: $cyan;
+    }
+    .highlight2 {
+        background: $blue-light;
+        color: $grey-light;
+    }
+}
