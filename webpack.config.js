@@ -31,7 +31,7 @@ const config = {
       use: {
         loader: 'babel-loader',
         options: {
-          presets: ['env', 'react']
+          presets: ['env']
         }
       }
     }, {
@@ -93,7 +93,7 @@ const config = {
   plugins: [
     new webpack.ProvidePlugin({
       jQuery: 'jquery',
-      $: 'jquery',
+      $: 'jquery'
     }),
     new webpack.DefinePlugin({
       'process.env': {
@@ -133,15 +133,15 @@ if (process.env.NODE_ENV === 'production') {
         ie8: false,
       },
     }),
-    new PurifyCSSPlugin({
-      minimize: true,
-      paths: glob.sync([
-        path.join(__dirname, 'web/**/*.html'),
-        path.join(__dirname, 'src/views/**/*.html'),
-        path.join(__dirname, 'src/assets/**/*.js'),
-        path.join(__dirname, 'src/assets/**/*.scss'),
-      ])
-    }),
+    // new PurifyCSSPlugin({
+    //   minimize: true,
+    //   paths: glob.sync([
+    //     path.join(__dirname, 'web/**/*.html'),
+    //     path.join(__dirname, 'src/views/**/*.html'),
+    //     path.join(__dirname, 'src/assets/**/*.js'),
+    //     path.join(__dirname, 'src/assets/**/*.scss'),
+    //   ])
+    // }),
     new AssetsCompressionPlugin({
       algorithm: 'gzip',
       asset: '[path].gz[query]',
