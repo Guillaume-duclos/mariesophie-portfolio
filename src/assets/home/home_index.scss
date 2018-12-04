@@ -53,3 +53,26 @@ p {
         color: $grey-light;
     }
 }
+
+section.portfolio-home, section.ux-home, section.web-home {
+    &.show {
+        a {
+            -webkit-animation: bounceInUp 1s linear forwards .4s;
+            -moz-animation: bounceInUp 1s linear forwards .4s;
+            animation: bounceInUp 1s linear forwards .4s;
+        }
+        h3 {
+            -webkit-animation: bounceInUp 1s linear forwards;
+            -moz-animation: bounceInUp 1s linear forwards;
+            animation: bounceInUp 1s linear forwards;
+        }
+        p {
+            -webkit-animation: bounceInUp 1s linear forwards .2s;
+            -moz-animation: bounceInUp 1s linear forwards .2s;
+            animation: bounceInUp 1s linear forwards .2s;
+        }
+    }
+    a, h3, p {
+        opacity: 0;
+    }
+}

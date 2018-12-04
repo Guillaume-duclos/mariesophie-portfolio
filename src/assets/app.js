@@ -2,17 +2,13 @@
 import './main.scss';
 
 // Libs imports
-import 'bootstrap/js/dist/util';
-import 'bootstrap/js/dist/carousel';
-
 import domready from 'domready';
 import lazySizes from 'lazysizes';
 import 'lazysizes/plugins/unveilhooks/ls.unveilhooks.min';
 
+// Custom JS imports
+import './home/home_index';
+
 domready(() => {
   lazySizes.init();
-
-  $('.carousel-indicators li').click(e => {
-    $('#carousel-home').carousel(parseInt(e.target.getAttribute('data-section-to')));
-  });
 });

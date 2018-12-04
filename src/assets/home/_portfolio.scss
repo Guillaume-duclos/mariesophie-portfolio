@@ -1,11 +1,13 @@
 .portfolio-home {
     height: 100vh;
     overflow: hidden;
+
     a {
         color: $blue-secondary;
         font-family: $raleway-bold-italic;
         font-size: 2rem;
         min-height: 6rem;
+
         &::after {
             background: $blue-secondary;
             display: inline-block;
@@ -17,33 +19,60 @@
             -moz-transition: width .2s ease-out;
             transition: width .2s ease-out;
         }
+
         &:hover {
             color: $blue-secondary;
             text-decoration: none;
+
             &::after {
                 width: 100%;
             }
         }
     }
+
     h1 {
-        color: $h1;
         font-family: $raleway-bold;
+        color: $h1;
         font-size: 20rem;
-        padding-left: 400px;
         margin: 0;
+
+        @media all and (min-width: 577px) {
+            color: $h1;
+            padding-left: 400px;
+        }
+
+        @media all and (max-width: 576px) {
+            color: $grey-light;
+            text-align: center;
+        }
     }
+
     .brush {
         height: 65vh;
         margin-top: -4rem;
     }
+
     .photos {
         top: 50%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
         -moz-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
+
         img {
-            width: 465px;
+            @media all and (min-width: 577px) {
+                width: 465px;
+            }
+
+            @media all and (max-width: 576px) {
+                width: 100vw;
+            }
+        }
+    }
+
+    .text-center.position-relative {
+        @media all and (max-width: 576px) {
+            height: 50vh;
         }
     }
 }

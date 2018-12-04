@@ -14,9 +14,7 @@ const resources = path.resolve(__dirname, 'src');
 const config = {
   cache: true,
   entry: {
-    app: [
-      './src/assets/app.js',
-    ]
+    app: './src/assets/app.js'
   },
   output: {
     library: '[name]', // assets build
@@ -97,11 +95,6 @@ const config = {
       jQuery: 'jquery',
       $: 'jquery'
     }),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      output: '',
-      template: 'src/views/index.html'
-    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV)
@@ -112,6 +105,11 @@ const config = {
     new ExtractTextPlugin({
       filename: '[name].css',
       allChunks: true
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      output: '',
+      template: 'src/views/index.html'
     })
   ]
 };

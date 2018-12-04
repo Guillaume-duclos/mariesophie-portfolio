@@ -3,6 +3,37 @@ footer {
         color: $grey;
         font-family: $raleway-bold;
         font-size: 7rem;
+        margin-bottom: 8rem;
         text-align: center;
+    }
+
+    p {
+        color: $mention;
+        margin: 0;
+    }
+
+    .socials-links {
+        flex-direction: row;
+
+        img {
+            &:hover {
+                -webkit-animation: pulse 1s linear infinite;
+                -moz-animation: pulse 1s linear infinite;
+                animation: pulse 1s linear infinite;
+            }
+        }
+
+        img.insta {
+            height: 25px;
+        }
+
+        img.linkedin {
+            height: 43px;
+            margin-top: -8px;
+        }
+
+        img.mail {
+            height: 23px;
+        }
     }
 }

@@ -1,0 +1,51 @@
+.input-container {
+    min-height: 45px;
+    position: relative;
+
+    * {
+        font-family: $roboto-regular;
+    }
+
+    input {
+        border: 0;
+        box-sizing: border-box;
+        border-bottom: 2px solid $grey;
+        outline: none;
+        -webkit-transition: .2s ease-in-out;
+        -moz-transition: .2s ease-in-out;
+        transition: .2s ease-in-out;
+    }
+
+    label {
+        align-items: center;
+        box-sizing: border-box;
+        color: $grey;
+        cursor: text;
+        display: flex;
+        font-size: 1rem;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        -webkit-transition: .2s ease-in-out;
+        -moz-transition: .2s ease-in-out;
+        transition: .2s ease-in-out;
+    }
+
+    input, label {
+        font-size: 1.6rem;
+        height: 3rem;
+        width: 100%;
+    }
+
+    input:valid, input:focus {
+        border-bottom: 2px solid $blue;
+    }
+
+    input:valid + label, input:focus + label {
+        color: $blue;
+        font-size: 1rem;
+        pointer-events: none;
+        top: -30px;
+    }
+}

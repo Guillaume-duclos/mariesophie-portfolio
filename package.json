@@ -8,7 +8,7 @@
     "lint:fix": "eslint --fix src/**",
     "test": "npm run lint",
     "install": "npm run build:dev",
-    "assets": "rm -rf web/public/* && cp -R src/public/* web/public/",
+    "assets": "rm -rf web/public/* && cp -R src/public/. web/public/",
     "build:stats": "webpack --profile --json > webpack-stats.json",
     "build:watch": "webpack --watch",
     "build:dev": "webpack",
@@ -21,7 +21,10 @@
     "domready": "^1.0.8",
     "fullpage.js": "^3.0.3",
     "jquery": "^3.3.1",
-    "lazysizes": "^4.1.4"
+    "lazysizes": "^4.1.4",
+    "paroller.js": "^1.4.4",
+    "scrollmagic": "^2.0.6",
+    "tilt.js": "^1.2.1"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",

@@ -1,12 +1,38 @@
 .ux-home {
     height: 100vh;
     overflow: hidden;
+
+    &.show {
+        .ipad {
+            -webkit-animation: bounceInRight 1s linear forwards .4s;
+            -moz-animation: bounceInRight 1s linear forwards .4s;
+            animation: bounceInRight 1s linear forwards .4s;
+        }
+
+        .julien {
+            -webkit-animation: bounceInRight 1s linear forwards;
+            -moz-animation: bounceInRight 1s linear forwards;
+            animation: bounceInRight 1s linear forwards;
+        }
+
+        .one-page {
+            -webkit-animation: bounceInRight 1s linear forwards .2s;
+            -moz-animation: bounceInRight 1s linear forwards .2s;
+            animation: bounceInRight 1s linear forwards .2s;
+        }
+    }
+
     h2 {
         color: $peach;
         font-family: $raleway-bold;
         font-size: 18rem;
         margin-bottom: -12rem;
     }
+
+    img {
+        opacity: 0;
+    }
+
     .artiste {
         img {
             display: block;
@@ -15,27 +41,25 @@
             width: 60%;
         }
     }
+
     .ipad-onepage {
         position: relative;
+
         .ipad {
             position: absolute;
             right: 0;
-            top: 50%;
+            top: 20%;
             width: 45%;
-            -webkit-transform: translateY(-50%);
-            -moz-transform: translateY(-50%);
-            transform: translateY(-50%);
         }
+
         .one-page {
-            bottom: 10%;
-            left: 50%;
+            bottom: 0;
+            left: 20%;
             position: absolute;
             width: 70%;
-            -webkit-transform: translateX(-50%);
-            -moz-transform: translateX(-50%);
-            transform: translateX(-50%);
         }
     }
+
     .ux-text {
         margin-top: -5rem;
     }
