@@ -2,6 +2,21 @@
     height: 100vh;
     overflow: hidden;
 
+    &.show {
+
+        h1 {
+            -webkit-animation: bounceInRight 1s linear forwards;
+            -moz-animation: bounceInRight 1s linear forwards;
+            animation: bounceInRight 1s linear forwards;
+        }
+
+        .brush {
+            -webkit-animation: bounceInLeft 1s linear forwards;
+            -moz-animation: bounceInLeft 1s linear forwards;
+            animation: bounceInLeft 1s linear forwards;
+        }
+    }
+
     a {
         color: $blue-secondary;
         font-family: $raleway-bold-italic;
@@ -35,6 +50,7 @@
         color: $h1;
         font-size: 20rem;
         margin: 0;
+        opacity: 0;
 
         @media all and (min-width: 577px) {
             color: $h1;
@@ -50,6 +66,7 @@
     .brush {
         height: 65vh;
         margin-top: -4rem;
+        opacity: 0;
     }
 
     .photos {
@@ -60,6 +77,7 @@
         transform: translate(-50%, -50%);
 
         img {
+
             @media all and (min-width: 577px) {
                 width: 465px;
             }

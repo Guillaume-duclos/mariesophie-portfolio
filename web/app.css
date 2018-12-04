@@ -6517,6 +6517,59 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
+.pg-pips {
+  position: fixed;
+  z-index: 1000; }
+  .pg-pips ul {
+    margin: 0;
+    padding: 0; }
+    .pg-pips ul li {
+      width: 10px;
+      height: 10px;
+      margin: 10px 5px;
+      position: relative; }
+      .pg-pips ul li:hover a {
+        width: 10px;
+        height: 10px;
+        margin: -5px 0px 0px -5px; }
+      .pg-pips ul li a {
+        display: block;
+        z-index: 1;
+        cursor: pointer;
+        text-decoration: none;
+        position: absolute;
+        height: 10px;
+        width: 10px;
+        border: 0;
+        background: #dadada;
+        left: 50%;
+        top: 50%;
+        margin: -5px 0 0 -5px;
+        -webkit-transition: background .2s linear;
+        -moz-transition: background .2s linear;
+        transition: background .2s linear; }
+      .pg-pips ul li a.active,
+      .pg-pips ul li:hover a.active {
+        background: #b1edee;
+        position: absolute;
+        height: 10px;
+        width: 10px;
+        margin: -5px 0 0 -5px; }
+
+.pg-vertical .pg-pips {
+  right: 10px;
+  top: 50%;
+  transform: translate3d(0, -50%, 0); }
+  .pg-vertical .pg-pips li {
+    display: block; }
+
+.pg-horizontal .pg-pips {
+  bottom: 10px;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0); }
+  .pg-horizontal .pg-pips li {
+    display: inline-block; }
+
 .input-container {
   min-height: 45px;
   position: relative; }
@@ -6872,34 +6925,62 @@ header {
     height: 100vh;
     width: 100%; }
 
-footer h3 {
-  color: #9c9c9c;
-  font-family: "Raleway-Bold";
-  font-size: 7rem;
-  margin-bottom: 8rem;
-  text-align: center; }
-
-footer p {
-  color: #787878;
-  margin: 0; }
-
-footer .socials-links {
-  flex-direction: row; }
-  footer .socials-links img:hover {
-    -webkit-animation: pulse 1s linear infinite;
-    -moz-animation: pulse 1s linear infinite;
-    animation: pulse 1s linear infinite; }
-  footer .socials-links img.insta {
-    height: 25px; }
-  footer .socials-links img.linkedin {
-    height: 43px;
-    margin-top: -8px; }
-  footer .socials-links img.mail {
-    height: 23px; }
+footer {
+  height: 100vh;
+  overflow: hidden;
+  position: relative; }
+  footer.show h3 {
+    -webkit-animation: bounceInLeft 1s linear forwards;
+    -moz-animation: bounceInLeft 1s linear forwards;
+    animation: bounceInLeft 1s linear forwards; }
+  footer.show .real-footer {
+    -webkit-animation: bounceInRight 1s linear forwards;
+    -moz-animation: bounceInRight 1s linear forwards;
+    animation: bounceInRight 1s linear forwards; }
+  footer > .row .row {
+    bottom: 0;
+    position: absolute;
+    width: 100%; }
+  footer h3 {
+    color: #9c9c9c;
+    font-family: "Raleway-Bold";
+    font-size: 7rem;
+    margin-bottom: 0;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    top: calc(50% - 84px);
+    width: 100%; }
+  footer p {
+    color: #787878;
+    margin: 0; }
+  footer .real-footer {
+    opacity: 0; }
+  footer .socials-links {
+    flex-direction: row; }
+    footer .socials-links img:hover {
+      -webkit-animation: pulse 1s linear infinite;
+      -moz-animation: pulse 1s linear infinite;
+      animation: pulse 1s linear infinite; }
+    footer .socials-links img.insta {
+      height: 25px; }
+    footer .socials-links img.linkedin {
+      height: 43px;
+      margin-top: -8px; }
+    footer .socials-links img.mail {
+      height: 23px; }
 
 .portfolio-home {
   height: 100vh;
   overflow: hidden; }
+  .portfolio-home.show h1 {
+    -webkit-animation: bounceInRight 1s linear forwards;
+    -moz-animation: bounceInRight 1s linear forwards;
+    animation: bounceInRight 1s linear forwards; }
+  .portfolio-home.show .brush {
+    -webkit-animation: bounceInLeft 1s linear forwards;
+    -moz-animation: bounceInLeft 1s linear forwards;
+    animation: bounceInLeft 1s linear forwards; }
   .portfolio-home a {
     color: #2a50fa;
     font-family: "Raleway-Bold-Italic";
@@ -6924,7 +7005,8 @@ footer .socials-links {
     font-family: "Raleway-Bold";
     color: #f6f2ee;
     font-size: 20rem;
-    margin: 0; }
+    margin: 0;
+    opacity: 0; }
     @media all and (min-width: 577px) {
       .portfolio-home h1 {
         color: #f6f2ee;
@@ -6935,7 +7017,8 @@ footer .socials-links {
         text-align: center; } }
   .portfolio-home .brush {
     height: 65vh;
-    margin-top: -4rem; }
+    margin-top: -4rem;
+    opacity: 0; }
   .portfolio-home .photos {
     top: 50%;
     left: 50%;
@@ -6955,6 +7038,10 @@ footer .socials-links {
 .ux-home {
   height: 100vh;
   overflow: hidden; }
+  .ux-home.show h2 {
+    -webkit-animation: bounceInLeft 1s linear forwards;
+    -moz-animation: bounceInLeft 1s linear forwards;
+    animation: bounceInLeft 1s linear forwards; }
   .ux-home.show .ipad {
     -webkit-animation: bounceInRight 1s linear forwards .4s;
     -moz-animation: bounceInRight 1s linear forwards .4s;
@@ -6971,7 +7058,8 @@ footer .socials-links {
     color: #f8dab5;
     font-family: "Raleway-Bold";
     font-size: 18rem;
-    margin-bottom: -12rem; }
+    margin-bottom: -12rem;
+    opacity: 0; }
   .ux-home img {
     opacity: 0; }
   .ux-home .artiste img {
@@ -6997,6 +7085,10 @@ footer .socials-links {
 .web-home {
   height: 100vh;
   overflow: hidden; }
+  .web-home.show h2 {
+    -webkit-animation: bounceInRight 1s linear forwards;
+    -moz-animation: bounceInRight 1s linear forwards;
+    animation: bounceInRight 1s linear forwards; }
   .web-home.show img {
     -webkit-animation: bounceInLeft 1s linear forwards;
     -moz-animation: bounceInLeft 1s linear forwards;
@@ -7006,6 +7098,7 @@ footer .socials-links {
     font-family: "Raleway-Bold";
     font-size: 18rem;
     margin-bottom: -24rem;
+    opacity: 0;
     text-align: center;
     position: relative;
     z-index: 2; }
@@ -7015,6 +7108,8 @@ footer .socials-links {
     margin-left: auto;
     margin-right: auto;
     opacity: 0; }
+  .web-home .web-home-text {
+    margin-top: -6rem; }
 
 a.discover-link {
   color: #2a50fa;
@@ -7074,6 +7169,16 @@ section.portfolio-home.show p, section.ux-home.show p, section.web-home.show p {
 
 section.portfolio-home a, section.portfolio-home h3, section.portfolio-home p, section.ux-home a, section.ux-home h3, section.ux-home p, section.web-home a, section.web-home h3, section.web-home p {
   opacity: 0; }
+
+#home .pg-pips {
+  opacity: 0; }
+  #home .pg-pips.show {
+    -webkit-animation: bounceInRight 1s linear forwards;
+    -moz-animation: bounceInRight 1s linear forwards;
+    animation: bounceInRight 1s linear forwards; }
+
+#home .pg-wrapper {
+  overflow-x: hidden; }
 
 html {
   font-size: 10px; }

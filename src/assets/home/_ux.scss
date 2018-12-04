@@ -3,6 +3,12 @@
     overflow: hidden;
 
     &.show {
+        h2 {
+            -webkit-animation: bounceInLeft 1s linear forwards;
+            -moz-animation: bounceInLeft 1s linear forwards;
+            animation: bounceInLeft 1s linear forwards;
+        }
+
         .ipad {
             -webkit-animation: bounceInRight 1s linear forwards .4s;
             -moz-animation: bounceInRight 1s linear forwards .4s;
@@ -27,6 +33,7 @@
         font-family: $raleway-bold;
         font-size: 18rem;
         margin-bottom: -12rem;
+        opacity: 0;
     }
 
     img {

@@ -1,15 +1,51 @@
 footer {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    &.show {
+
+        h3 {
+            -webkit-animation: bounceInLeft 1s linear forwards;
+            -moz-animation: bounceInLeft 1s linear forwards;
+            animation: bounceInLeft 1s linear forwards;
+        }
+
+        .real-footer {
+            -webkit-animation: bounceInRight 1s linear forwards;
+            -moz-animation: bounceInRight 1s linear forwards;
+            animation: bounceInRight 1s linear forwards;
+        }
+    }
+
+    > .row {
+
+        .row {
+            bottom: 0;
+            position: absolute;
+            width: 100%;
+        }
+    }
+
     h3 {
         color: $grey;
         font-family: $raleway-bold;
         font-size: 7rem;
-        margin-bottom: 8rem;
+        margin-bottom: 0;
+        opacity: 0;
+        position: absolute;
         text-align: center;
+        top: calc(50% - 84px);
+        width: 100%;
     }
 
     p {
         color: $mention;
         margin: 0;
+    }
+
+    .real-footer {
+        opacity: 0;
     }
 
     .socials-links {

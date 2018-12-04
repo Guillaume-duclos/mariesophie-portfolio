@@ -93,7 +93,7 @@ const config = {
   plugins: [
     new webpack.ProvidePlugin({
       jQuery: 'jquery',
-      $: 'jquery'
+      $: 'jquery',
     }),
     new webpack.DefinePlugin({
       'process.env': {
