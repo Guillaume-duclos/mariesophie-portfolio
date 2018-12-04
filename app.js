@@ -10448,156 +10448,6 @@ return jQuery;
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-(function (global, factory) {
-   true ? module.exports = factory(__webpack_require__(0)) :
-  typeof define === 'function' && define.amd ? define(['jquery'], factory) :
-  (global.Util = factory(global.jQuery));
-}(this, (function ($) { 'use strict';
-
-  $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
-
-  /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): util.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-   * --------------------------------------------------------------------------
-   */
-
-  var Util = function ($$$1) {
-    /**
-     * ------------------------------------------------------------------------
-     * Private TransitionEnd Helpers
-     * ------------------------------------------------------------------------
-     */
-    var TRANSITION_END = 'transitionend';
-    var MAX_UID = 1000000;
-    var MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
-
-    function toType(obj) {
-      return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
-    }
-
-    function getSpecialTransitionEndEvent() {
-      return {
-        bindType: TRANSITION_END,
-        delegateType: TRANSITION_END,
-        handle: function handle(event) {
-          if ($$$1(event.target).is(this)) {
-            return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
-          }
-
-          return undefined; // eslint-disable-line no-undefined
-        }
-      };
-    }
-
-    function transitionEndEmulator(duration) {
-      var _this = this;
-
-      var called = false;
-      $$$1(this).one(Util.TRANSITION_END, function () {
-        called = true;
-      });
-      setTimeout(function () {
-        if (!called) {
-          Util.triggerTransitionEnd(_this);
-        }
-      }, duration);
-      return this;
-    }
-
-    function setTransitionEndSupport() {
-      $$$1.fn.emulateTransitionEnd = transitionEndEmulator;
-      $$$1.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
-    }
-    /**
-     * --------------------------------------------------------------------------
-     * Public Util Api
-     * --------------------------------------------------------------------------
-     */
-
-
-    var Util = {
-      TRANSITION_END: 'bsTransitionEnd',
-      getUID: function getUID(prefix) {
-        do {
-          // eslint-disable-next-line no-bitwise
-          prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
-        } while (document.getElementById(prefix));
-
-        return prefix;
-      },
-      getSelectorFromElement: function getSelectorFromElement(element) {
-        var selector = element.getAttribute('data-target');
-
-        if (!selector || selector === '#') {
-          selector = element.getAttribute('href') || '';
-        }
-
-        try {
-          return document.querySelector(selector) ? selector : null;
-        } catch (err) {
-          return null;
-        }
-      },
-      getTransitionDurationFromElement: function getTransitionDurationFromElement(element) {
-        if (!element) {
-          return 0;
-        } // Get transition-duration of the element
-
-
-        var transitionDuration = $$$1(element).css('transition-duration');
-        var floatTransitionDuration = parseFloat(transitionDuration); // Return 0 if element or transition duration is not found
-
-        if (!floatTransitionDuration) {
-          return 0;
-        } // If multiple durations are defined, take the first
-
-
-        transitionDuration = transitionDuration.split(',')[0];
-        return parseFloat(transitionDuration) * MILLISECONDS_MULTIPLIER;
-      },
-      reflow: function reflow(element) {
-        return element.offsetHeight;
-      },
-      triggerTransitionEnd: function triggerTransitionEnd(element) {
-        $$$1(element).trigger(TRANSITION_END);
-      },
-      // TODO: Remove in v5
-      supportsTransitionEnd: function supportsTransitionEnd() {
-        return Boolean(TRANSITION_END);
-      },
-      isElement: function isElement(obj) {
-        return (obj[0] || obj).nodeType;
-      },
-      typeCheckConfig: function typeCheckConfig(componentName, config, configTypes) {
-        for (var property in configTypes) {
-          if (Object.prototype.hasOwnProperty.call(configTypes, property)) {
-            var expectedTypes = configTypes[property];
-            var value = config[property];
-            var valueType = value && Util.isElement(value) ? 'element' : toType(value);
-
-            if (!new RegExp(expectedTypes).test(valueType)) {
-              throw new Error(componentName.toUpperCase() + ": " + ("Option \"" + property + "\" provided type \"" + valueType + "\" ") + ("but expected type \"" + expectedTypes + "\"."));
-            }
-          }
-        }
-      }
-    };
-    setTransitionEndSupport();
-    return Util;
-  }($);
-
-  return Util;
-
-})));
-//# sourceMappingURL=util.js.map
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
 /*!
   * domready (c) Dustin Diaz 2014 - License MIT
   */
@@ -10631,7 +10481,7 @@ return jQuery;
 
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports) {
 
 (function(window, factory) {
@@ -11340,6 +11190,156 @@ return jQuery;
 
 
 /***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function (global, factory) {
+   true ? module.exports = factory(__webpack_require__(0)) :
+  typeof define === 'function' && define.amd ? define(['jquery'], factory) :
+  (global.Util = factory(global.jQuery));
+}(this, (function ($) { 'use strict';
+
+  $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
+
+  /**
+   * --------------------------------------------------------------------------
+   * Bootstrap (v4.1.3): util.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * --------------------------------------------------------------------------
+   */
+
+  var Util = function ($$$1) {
+    /**
+     * ------------------------------------------------------------------------
+     * Private TransitionEnd Helpers
+     * ------------------------------------------------------------------------
+     */
+    var TRANSITION_END = 'transitionend';
+    var MAX_UID = 1000000;
+    var MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
+
+    function toType(obj) {
+      return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
+    }
+
+    function getSpecialTransitionEndEvent() {
+      return {
+        bindType: TRANSITION_END,
+        delegateType: TRANSITION_END,
+        handle: function handle(event) {
+          if ($$$1(event.target).is(this)) {
+            return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
+          }
+
+          return undefined; // eslint-disable-line no-undefined
+        }
+      };
+    }
+
+    function transitionEndEmulator(duration) {
+      var _this = this;
+
+      var called = false;
+      $$$1(this).one(Util.TRANSITION_END, function () {
+        called = true;
+      });
+      setTimeout(function () {
+        if (!called) {
+          Util.triggerTransitionEnd(_this);
+        }
+      }, duration);
+      return this;
+    }
+
+    function setTransitionEndSupport() {
+      $$$1.fn.emulateTransitionEnd = transitionEndEmulator;
+      $$$1.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
+    }
+    /**
+     * --------------------------------------------------------------------------
+     * Public Util Api
+     * --------------------------------------------------------------------------
+     */
+
+
+    var Util = {
+      TRANSITION_END: 'bsTransitionEnd',
+      getUID: function getUID(prefix) {
+        do {
+          // eslint-disable-next-line no-bitwise
+          prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
+        } while (document.getElementById(prefix));
+
+        return prefix;
+      },
+      getSelectorFromElement: function getSelectorFromElement(element) {
+        var selector = element.getAttribute('data-target');
+
+        if (!selector || selector === '#') {
+          selector = element.getAttribute('href') || '';
+        }
+
+        try {
+          return document.querySelector(selector) ? selector : null;
+        } catch (err) {
+          return null;
+        }
+      },
+      getTransitionDurationFromElement: function getTransitionDurationFromElement(element) {
+        if (!element) {
+          return 0;
+        } // Get transition-duration of the element
+
+
+        var transitionDuration = $$$1(element).css('transition-duration');
+        var floatTransitionDuration = parseFloat(transitionDuration); // Return 0 if element or transition duration is not found
+
+        if (!floatTransitionDuration) {
+          return 0;
+        } // If multiple durations are defined, take the first
+
+
+        transitionDuration = transitionDuration.split(',')[0];
+        return parseFloat(transitionDuration) * MILLISECONDS_MULTIPLIER;
+      },
+      reflow: function reflow(element) {
+        return element.offsetHeight;
+      },
+      triggerTransitionEnd: function triggerTransitionEnd(element) {
+        $$$1(element).trigger(TRANSITION_END);
+      },
+      // TODO: Remove in v5
+      supportsTransitionEnd: function supportsTransitionEnd() {
+        return Boolean(TRANSITION_END);
+      },
+      isElement: function isElement(obj) {
+        return (obj[0] || obj).nodeType;
+      },
+      typeCheckConfig: function typeCheckConfig(componentName, config, configTypes) {
+        for (var property in configTypes) {
+          if (Object.prototype.hasOwnProperty.call(configTypes, property)) {
+            var expectedTypes = configTypes[property];
+            var value = config[property];
+            var valueType = value && Util.isElement(value) ? 'element' : toType(value);
+
+            if (!new RegExp(expectedTypes).test(valueType)) {
+              throw new Error(componentName.toUpperCase() + ": " + ("Option \"" + property + "\" provided type \"" + valueType + "\" ") + ("but expected type \"" + expectedTypes + "\"."));
+            }
+          }
+        }
+      }
+    };
+    setTransitionEndSupport();
+    return Util;
+  }($);
+
+  return Util;
+
+})));
+//# sourceMappingURL=util.js.map
+
+
+/***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11348,17 +11348,17 @@ return jQuery;
 
 __webpack_require__(5);
 
-var _domready = __webpack_require__(2);
+var _domready = __webpack_require__(1);
 
 var _domready2 = _interopRequireDefault(_domready);
 
-var _lazysizes = __webpack_require__(3);
+var _lazysizes = __webpack_require__(2);
 
 var _lazysizes2 = _interopRequireDefault(_lazysizes);
 
-__webpack_require__(8);
+__webpack_require__(6);
 
-__webpack_require__(9);
+__webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11380,8 +11380,99 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/*! lazysizes - v4.1.4 */
+!function(a,b){var c=function(){b(a.lazySizes),a.removeEventListener("lazyunveilread",c,!0)};b=b.bind(null,a,a.document),"object"==typeof module&&module.exports?b(__webpack_require__(2)):a.lazySizes?c():a.addEventListener("lazyunveilread",c,!0)}(window,function(a,b,c){"use strict";function d(a,c){if(!g[a]){var d=b.createElement(c?"link":"script"),e=b.getElementsByTagName("script")[0];c?(d.rel="stylesheet",d.href=a):d.src=a,g[a]=!0,g[d.src||d.href]=!0,e.parentNode.insertBefore(d,e)}}var e,f,g={};b.addEventListener&&(f=/\(|\)|\s|'/,e=function(a,c){var d=b.createElement("img");d.onload=function(){d.onload=null,d.onerror=null,d=null,c()},d.onerror=d.onload,d.src=a,d&&d.complete&&d.onload&&d.onload()},addEventListener("lazybeforeunveil",function(a){if(a.detail.instance==c){var b,g,h,i;a.defaultPrevented||("none"==a.target.preload&&(a.target.preload="auto"),b=a.target.getAttribute("data-link"),b&&d(b,!0),b=a.target.getAttribute("data-script"),b&&d(b),b=a.target.getAttribute("data-require"),b&&(c.cfg.requireJs?c.cfg.requireJs([b]):d(b)),h=a.target.getAttribute("data-bg"),h&&(a.detail.firesLoad=!0,g=function(){a.target.style.backgroundImage="url("+(f.test(h)?JSON.stringify(h):h)+")",a.detail.firesLoad=!1,c.fire(a.target,"_lazyloaded",{},!0,!0)},e(h,g)),i=a.target.getAttribute("data-poster"),i&&(a.detail.firesLoad=!0,g=function(){a.target.poster=i,a.detail.firesLoad=!1,c.fire(a.target,"_lazyloaded",{},!0,!0)},e(i,g)))}},!1))});
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+__webpack_require__(3);
+
+__webpack_require__(8);
+
+__webpack_require__(9);
+
+var _domready = __webpack_require__(1);
+
+var _domready2 = _interopRequireDefault(_domready);
+
+var _pageable = __webpack_require__(10);
+
+var _pageable2 = _interopRequireDefault(_pageable);
+
+var _scrollmagic = __webpack_require__(13);
+
+var _scrollmagic2 = _interopRequireDefault(_scrollmagic);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _domready2.default)(function () {
+
+  var home = document.querySelector('#home');
+  var magicController = new _scrollmagic2.default.Controller();
+
+  if (home) {
+    $('.carousel-indicators li').click(function (e) {
+      $('#carousel-home').carousel(parseInt(e.target.getAttribute('data-section-to')));
+    });
+
+    new _pageable2.default('#container');
+
+    var portfolioBreakpoint = home.querySelector('.portfolio-home');
+    var uxBreakpoint = home.querySelector('.ux-home');
+    var webBreakpoint = home.querySelector('.web-home');
+    var footerBreakpoint = home.querySelector('footer');
+
+    new _scrollmagic2.default.Scene({
+      triggerElement: portfolioBreakpoint,
+      triggerHook: 'onEnter',
+      offset: 300
+    }).on('enter', function () {
+      document.querySelector('header').classList.add('d-none');
+      home.querySelector('.pg-pips').classList.add('show');
+      portfolioBreakpoint.classList.add('show');
+    }).on('leave', function () {
+      document.querySelector('header').classList.remove('d-none');
+      home.querySelector('.pg-pips').classList.remove('show');
+    }).addTo(magicController);
+
+    new _scrollmagic2.default.Scene({
+      triggerElement: uxBreakpoint,
+      triggerHook: 'onEnter',
+      offset: 500
+    }).on('enter', function () {
+      uxBreakpoint.classList.add('show');
+    }).addTo(magicController);
+
+    new _scrollmagic2.default.Scene({
+      triggerElement: webBreakpoint,
+      triggerHook: 'onEnter',
+      offset: 400
+    }).on('enter', function () {
+      webBreakpoint.classList.add('show');
+    }).addTo(magicController);
+
+    new _scrollmagic2.default.Scene({
+      triggerElement: footerBreakpoint,
+      triggerHook: 'onEnter',
+      offset: 400
+    }).on('enter', function () {
+      footerBreakpoint.classList.add('show');
+    }).addTo(magicController);
+  }
+});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
 (function (global, factory) {
-   true ? module.exports = factory(__webpack_require__(0), __webpack_require__(1)) :
+   true ? module.exports = factory(__webpack_require__(0), __webpack_require__(3)) :
   typeof define === 'function' && define.amd ? define(['jquery', './util.js'], factory) :
   (global.Carousel = factory(global.jQuery,global.Util));
 }(this, (function ($,Util) { 'use strict';
@@ -11950,7 +12041,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (factory) {
@@ -12263,83 +12354,1385 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 }));
 
 /***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*! lazysizes - v4.1.4 */
-!function(a,b){var c=function(){b(a.lazySizes),a.removeEventListener("lazyunveilread",c,!0)};b=b.bind(null,a,a.document),"object"==typeof module&&module.exports?b(__webpack_require__(3)):a.lazySizes?c():a.addEventListener("lazyunveilread",c,!0)}(window,function(a,b,c){"use strict";function d(a,c){if(!g[a]){var d=b.createElement(c?"link":"script"),e=b.getElementsByTagName("script")[0];c?(d.rel="stylesheet",d.href=a):d.src=a,g[a]=!0,g[d.src||d.href]=!0,e.parentNode.insertBefore(d,e)}}var e,f,g={};b.addEventListener&&(f=/\(|\)|\s|'/,e=function(a,c){var d=b.createElement("img");d.onload=function(){d.onload=null,d.onerror=null,d=null,c()},d.onerror=d.onload,d.src=a,d&&d.complete&&d.onload&&d.onload()},addEventListener("lazybeforeunveil",function(a){if(a.detail.instance==c){var b,g,h,i;a.defaultPrevented||("none"==a.target.preload&&(a.target.preload="auto"),b=a.target.getAttribute("data-link"),b&&d(b,!0),b=a.target.getAttribute("data-script"),b&&d(b),b=a.target.getAttribute("data-require"),b&&(c.cfg.requireJs?c.cfg.requireJs([b]):d(b)),h=a.target.getAttribute("data-bg"),h&&(a.detail.firesLoad=!0,g=function(){a.target.style.backgroundImage="url("+(f.test(h)?JSON.stringify(h):h)+")",a.detail.firesLoad=!1,c.fire(a.target,"_lazyloaded",{},!0,!0)},e(h,g)),i=a.target.getAttribute("data-poster"),i&&(a.detail.firesLoad=!0,g=function(){a.target.poster=i,a.detail.firesLoad=!1,c.fire(a.target,"_lazyloaded",{},!0,!0)},e(i,g)))}},!1))});
-
-/***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function($) {
 
-__webpack_require__(1);
 
-__webpack_require__(6);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-__webpack_require__(11);
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-__webpack_require__(7);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _domready = __webpack_require__(2);
+var _slideshow = __webpack_require__(11);
 
-var _domready2 = _interopRequireDefault(_domready);
+var _slideshow2 = _interopRequireDefault(_slideshow);
 
-var _scrollmagic = __webpack_require__(10);
+var _emitter = __webpack_require__(12);
 
-var _scrollmagic2 = _interopRequireDefault(_scrollmagic);
+var _emitter2 = _interopRequireDefault(_emitter);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _domready2.default)(function () {
-  var home = document.querySelector('#home');
-  var magicController = new _scrollmagic2.default.Controller();
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  if (home) {
-    $('.carousel-indicators li').click(function (e) {
-      $('#carousel-home').carousel(parseInt(e.target.getAttribute('data-section-to')));
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * Pageable 0.5.4
+ *
+ * https://github.com/Mobius1/Pageable
+ * Released under the MIT license
+ */
+var Pageable = function (_Emitter) {
+  _inherits(Pageable, _Emitter);
+
+  function Pageable(container) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    _classCallCheck(this, Pageable);
+
+    // missing container parameter
+    var _this = _possibleConstructorReturn(this, (Pageable.__proto__ || Object.getPrototypeOf(Pageable)).call(this));
+
+    if (container === undefined) {
+      var _ret;
+
+      return _ret = console.error("Pageable:", "No container defined."), _possibleConstructorReturn(_this, _ret);
+    }
+
+    var defaults = {
+      pips: true,
+      animation: 300,
+      delay: 0,
+      throttle: 50,
+      orientation: "vertical",
+      easing: function easing(t, b, c, d, s) {
+        return -c * (t /= d) * (t - 2) + b;
+      },
+      onInit: function onInit() {},
+      onUpdate: function onUpdate() {},
+      onBeforeStart: function onBeforeStart() {},
+      onStart: function onStart() {},
+      onScroll: function onScroll() {},
+      onFinish: function onFinish() {},
+      swipeThreshold: 50,
+      freeScroll: false,
+      slideshow: false,
+      infinite: false,
+      events: {
+        wheel: true,
+        mouse: true,
+        touch: true
+      }
+    };
+
+    _this.container = typeof container === "string" ? document.querySelector(container) : container;
+
+    // container not found
+    if (!_this.container) {
+      var _ret2;
+
+      return _ret2 = console.error("Pageable:", "The container could not be found."), _possibleConstructorReturn(_this, _ret2);
+    }
+
+    _this.config = Object.assign({}, defaults, options);
+    _this.events = Object.assign({}, defaults.events, options.events);
+
+    if (_this.config.anchors && Array.isArray(_this.config.anchors)) {
+      var frag = document.createDocumentFragment();
+
+      _this.config.anchors.forEach(function (anchor) {
+        var page = document.createElement("div");
+        page.dataset.anchor = anchor;
+        frag.appendChild(page);
+      });
+
+      _this.container.appendChild(frag);
+    }
+
+    // search for child nodes with the [data-anchor] attribute
+    _this.pages = _this.container.querySelectorAll("[data-anchor]");
+
+    // none found
+    if (!_this.pages.length) {
+      var _ret3;
+
+      return _ret3 = console.error("Pageable:", "No child nodes with the [data-anchor] attribute could be found."), _possibleConstructorReturn(_this, _ret3);
+    }
+
+    _this.horizontal = _this.config.orientation === "horizontal";
+
+    _this.anchors = [];
+
+    _this.pages.forEach(function (page, i) {
+      var clean = page.dataset.anchor.replace(/\s+/, "-").toLowerCase();
+      if (page.id !== clean) {
+        page.id = clean;
+      }
+
+      _this.anchors.push('#' + clean);
+
+      page.classList.add("pg-page");
+
+      page.classList.toggle("pg-active", i == 0);
     });
 
-    $('.paroller-portfolio').paroller();
-    $('.paroller-web').paroller();
-    $('.paroller-ux').paroller();
+    _this.axis = _this.horizontal ? "x" : "y";
 
-    var portfolioBreakpoint = home.querySelector('.portfolio-home');
-    var uxBreakpoint = home.querySelector('.ux-home');
-    var webBreakpoint = home.querySelector('.web-home');
+    _this.mouseAxis = {
+      x: "clientX",
+      y: "clientY"
+    };
 
-    new _scrollmagic2.default.Scene({
-      triggerElement: portfolioBreakpoint,
-      triggerHook: 'onEnter',
-      offset: 300
-    }).on('enter', function () {
-      portfolioBreakpoint.classList.add('show');
-    }).addTo(magicController);
+    _this.scrollAxis = {
+      x: "scrollLeft",
+      y: "scrollTop"
+    };
 
-    new _scrollmagic2.default.Scene({
-      triggerElement: uxBreakpoint,
-      triggerHook: 'onEnter',
-      offset: 500
-    }).on('enter', function () {
-      uxBreakpoint.classList.add('show');
-    }).addTo(magicController);
+    _this.size = {
+      x: "width",
+      y: "height"
+    };
 
-    new _scrollmagic2.default.Scene({
-      triggerElement: webBreakpoint,
-      triggerHook: 'onEnter',
-      offset: 400
-    }).on('enter', function () {
-      webBreakpoint.classList.add('show');
-    }).addTo(magicController);
+    _this.bar = _this._getScrollBarWidth();
+
+    _this.index = 0;
+    _this.slideIndex = 0;
+    _this.oldIndex = 0;
+
+    _this.down = false;
+    _this.initialised = false;
+
+    _this.touch = "ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch;
+
+    _this.init();
+    return _this;
   }
-});
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+  /**
+   * Initialze instance
+   * @return {Void}
+   */
+
+
+  _createClass(Pageable, [{
+    key: 'init',
+    value: function init() {
+      if (!this.initialised && !this.container.pageable) {
+        var o = this.config;
+        this.wrapper = document.createElement("div");
+        this.container.parentNode.insertBefore(this.wrapper, this.container);
+        this.wrapper.appendChild(this.container);
+
+        this.wrapper.classList.add("pg-wrapper", 'pg-' + o.orientation);
+        this.wrapper.classList.add("pg-wrapper");
+        this.container.classList.add("pg-container");
+
+        // hide body overflow and remove margin
+        document.body.style.margin = 0;
+        document.body.style.overflow = 'hidden';
+
+        this.container.style.display = "inline-block";
+
+        var _arr = ["Prev", "Next"];
+        for (var _i = 0; _i < _arr.length; _i++) {
+          var dir = _arr[_i];
+          var str = 'nav' + dir + 'El';
+          if (o[str]) {
+            if (typeof o[str] === "string") {
+              this[str] = document.querySelector(o[str]);
+            } else if (o[str] instanceof Element) {
+              this[str] = o[str];
+            }
+
+            if (this[str]) {
+              this[str].classList.add("pg-nav");
+            }
+          }
+        }
+
+        if (o.pips) {
+          var nav = document.createElement("nav");
+          var ul = document.createElement("ul");
+          nav.classList.add("pg-pips");
+
+          var _iteratorNormalCompletion = true;
+          var _didIteratorError = false;
+          var _iteratorError = undefined;
+
+          try {
+            for (var _iterator = this.pages.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+              var _ref = _step.value;
+
+              var _ref2 = _slicedToArray(_ref, 2);
+
+              var index = _ref2[0];
+              var page = _ref2[1];
+
+              var li = document.createElement("li");
+              var a = document.createElement("a");
+              var span = document.createElement("span");
+
+              a.href = '#' + page.id;
+
+              if (index == 0) {
+                a.classList.add("active");
+              }
+
+              a.appendChild(span);
+              li.appendChild(a);
+
+              ul.appendChild(li);
+            }
+          } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+          } finally {
+            try {
+              if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+              }
+            } finally {
+              if (_didIteratorError) {
+                throw _iteratorError;
+              }
+            }
+          }
+
+          nav.appendChild(ul);
+
+          this.wrapper.appendChild(nav);
+
+          this.pips = Array.from(ul.children);
+        }
+
+        this.pageCount = this.pages.length;
+        this.lastIndex = this.pageCount - 1;
+
+        if (o.infinite) {
+          this._toggleInfinite();
+        }
+
+        this.bind();
+
+        this.update();
+        this._load();
+
+        var data = this._getData();
+
+        this.config.onInit.call(this, data);
+
+        // emit "init" event
+        this.emit("init", data);
+
+        this.initialised = true;
+        this.container.pageable = this;
+
+        if (o.slideshow && typeof _slideshow2.default === "function") {
+          this.slider = new _slideshow2.default(this);
+          this.slider.start();
+        }
+      }
+    }
+
+    /**
+     * Attach event listeners
+     * @return {Void}
+     */
+
+  }, {
+    key: 'bind',
+    value: function bind() {
+      var _this2 = this,
+          _arguments = arguments;
+
+      var throttle = function throttle(fn, limit, context) {
+        var wait = void 0;
+        return function () {
+          context = context || _this2;
+          if (!wait) {
+            fn.apply(context, _arguments);
+            wait = true;
+            return setTimeout(function () {
+              wait = false;
+            }, limit);
+          }
+        };
+      };
+
+      this.callbacks = {
+        wheel: this._wheel.bind(this),
+        update: throttle(this.update.bind(this), this.config.throttle),
+        load: this._load.bind(this),
+        start: this._start.bind(this),
+        drag: this._drag.bind(this),
+        stop: this._stop.bind(this),
+        click: this._click.bind(this),
+        prev: this.prev.bind(this),
+        next: this.next.bind(this)
+      };
+
+      this.wrapper.addEventListener("wheel", this.callbacks.wheel, false);
+      window.addEventListener("resize", this.callbacks.update, false);
+
+      this.wrapper.addEventListener(this.touch ? "touchstart" : "mousedown", this.callbacks.start, false);
+
+      window.addEventListener(this.touch ? "touchmove" : "mousemove", this.callbacks.drag, false);
+
+      window.addEventListener(this.touch ? "touchend" : "mouseup", this.callbacks.stop, false);
+
+      if (this.navPrevEl) {
+        this.navPrevEl.addEventListener("click", this.callbacks.prev, false);
+
+        if (this.navNextEl) this.navNextEl.addEventListener("click", this.callbacks.next, false);
+      }
+
+      // anchor clicks
+      document.addEventListener("click", this.callbacks.click, false);
+    }
+
+    /**
+     * Remove event listeners
+     * @return {Bool}
+     */
+
+  }, {
+    key: 'unbind',
+    value: function unbind() {
+      this.wrapper.removeEventListener("wheel", this.callbacks.wheel);
+      window.removeEventListener("resize", this.callbacks.update);
+
+      this.wrapper.removeEventListener(this.touch ? "touchstart" : "mousedown", this.callbacks.start);
+
+      window.addEventListener(this.touch ? "touchmove" : "mousemove", this.callbacks.drag);
+
+      window.removeEventListener(this.touch ? "touchend" : "mouseup", this.callbacks.stop);
+
+      if (this.navPrevEl) {
+        this.navPrevEl.removeEventListener("click", this.callbacks.prev, false);
+      }
+
+      if (this.navNextEl) {
+        this.navNextEl.removeEventListener("click", this.callbacks.next, false);
+      }
+
+      document.removeEventListener("click", this.callbacks.click);
+    }
+
+    /**
+     * Scroll to defined paged
+     * @param  {Number} page Page number
+     * @return {Void}
+     */
+
+  }, {
+    key: 'scrollToPage',
+    value: function scrollToPage(page) {
+      this.scrollToIndex(page - 1);
+    }
+
+    /**
+     * Scroll to defined anchor
+     * @param  {String} id Anchor text
+     * @return {Void}
+     */
+
+  }, {
+    key: 'scrollToAnchor',
+    value: function scrollToAnchor(id) {
+      this.scrollToIndex(this.anchors.indexOf(id));
+    }
+
+    /**
+     * Scroll to defined index
+     * @param  {Number} index
+     * @return {Void}
+     */
+
+  }, {
+    key: 'scrollToIndex',
+    value: function scrollToIndex(index) {
+      if (!this.scrolling && index >= 0 && index <= this.pages.length - 1) {
+        var oldIndex = this.index;
+        this.index = index;
+        this.oldIndex = oldIndex;
+        this._scrollBy(this._getScrollAmount(oldIndex));
+      }
+    }
+
+    /**
+     * Scroll to next page
+     * @return {Function}
+     */
+
+  }, {
+    key: 'next',
+    value: function next() {
+      if (this.config.infinite) {
+        var index = this.index;
+        if (index === this.lastIndex) {
+          index++;
+          this._scrollBy(-this.data.window[this.size[this.axis]], index);
+        }
+      }
+
+      this.scrollToIndex(this.index + 1);
+    }
+
+    /**
+     * Scroll to previous page
+     * @return {Function}
+     */
+
+  }, {
+    key: 'prev',
+    value: function prev() {
+      if (this.config.infinite) {
+        var index = this.index;
+        if (index === 0) {
+          index--;
+          this._scrollBy(this.data.window[this.size[this.axis]], index);
+        }
+      }
+      this.scrollToIndex(this.index - 1);
+    }
+
+    /**
+     * Update the instance
+     * @return {Void}
+     */
+
+  }, {
+    key: 'update',
+    value: function update() {
+      var _this3 = this;
+
+      clearTimeout(this.timer);
+      this.data = {
+        window: {
+          width: window.innerWidth,
+          height: window.innerHeight
+        },
+        container: {
+          height: this.wrapper.scrollHeight,
+          width: this.wrapper.scrollWidth
+        }
+      };
+
+      // set container dimensions
+      var size = this.size[this.axis];
+      var opp = this.horizontal ? this.size.y : this.size.x;
+
+      // set wrapper size and scroll
+      this.wrapper.style['overflow-' + this.axis] = 'scroll';
+      this.wrapper.style[size] = this.data.window[size] + 'px';
+      this.wrapper.style[opp] = this.data.window[opp] + this.bar + 'px';
+
+      // set container size
+      var len = this.config.infinite ? this.pages.length + 2 : this.pages.length;
+      var offset = this.config.infinite ? this.data.window[size] : 0;
+      // const len = this.pages.length;
+      this.container.style[size] = len * this.data.window[size] + 'px';
+
+      // offset for scroll bars
+      this.wrapper.style['padding-' + (this.horizontal ? "bottom" : "right")] = this.bar + 'px';
+
+      // reset scroll position (do this AFTER setting dimensions)
+      this.wrapper[this.scrollAxis[this.axis]] = this.index * this.data.window[size] + offset;
+
+      this.scrollSize = len * this.data.window[size] - this.data.window[size];
+      this.scrollPosition = this.data.window[size] * this.index + offset;
+
+      this.pages.forEach(function (page, i) {
+        if (_this3.horizontal) {
+          page.style.float = "left";
+        }
+        page.style[size] = _this3.data.window[size] + 'px';
+        page.style[opp] = _this3.data.window[opp] + 'px';
+      });
+
+      if (this.config.infinite) {
+        var _iteratorNormalCompletion2 = true;
+        var _didIteratorError2 = false;
+        var _iteratorError2 = undefined;
+
+        try {
+          for (var _iterator2 = this.clones[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+            var clone = _step2.value;
+
+            if (this.horizontal) {
+              clone.style.float = "left";
+            }
+            clone.style[size] = this.data.window[size] + 'px';
+            clone.style[opp] = this.data.window[opp] + 'px';
+          }
+        } catch (err) {
+          _didIteratorError2 = true;
+          _iteratorError2 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion2 && _iterator2.return) {
+              _iterator2.return();
+            }
+          } finally {
+            if (_didIteratorError2) {
+              throw _iteratorError2;
+            }
+          }
+        }
+      }
+
+      this.config.onUpdate.call(this, this._getData());
+
+      // emit "update" event
+      this.emit("update", this._getData());
+    }
+
+    /**
+     * Orientate the instance
+     * @param  {String} type
+     * @return {Void}
+     */
+
+  }, {
+    key: 'orientate',
+    value: function orientate(type) {
+      switch (type) {
+        case "vertical":
+          this.horizontal = false;
+          this.axis = "y";
+          this.container.style.width = '';
+          break;
+        case "horizontal":
+          this.horizontal = true;
+          this.axis = "x";
+          this.container.style.height = '';
+          break;
+        default:
+          return false;
+      }
+
+      this.wrapper.classList.toggle("pg-vertical", !this.horizontal);
+      this.wrapper.classList.toggle("pg-horizontal", this.horizontal);
+
+      this.config.orientation = type;
+
+      this.update();
+    }
+  }, {
+    key: 'slideshow',
+    value: function slideshow() {
+      return this.slider;
+    }
+
+    /**
+     * Destroy instance
+     * @return {Void}
+     */
+
+  }, {
+    key: 'destroy',
+    value: function destroy() {
+      if (this.initialised) {
+        // emit "destroy" event
+        this.emit("destroy");
+
+        // remove event listeners
+        this.unbind();
+
+        // reset body styling
+        document.body.style.margin = '';
+        document.body.style.overflow = '';
+
+        this.container.style.display = '';
+        this.container.style.height = '';
+        this.container.style.width = '';
+        this.container.classList.remove("pg-container");
+
+        this.wrapper.parentNode.replaceChild(this.container, this.wrapper);
+
+        // reset the pages
+        var _iteratorNormalCompletion3 = true;
+        var _didIteratorError3 = false;
+        var _iteratorError3 = undefined;
+
+        try {
+          for (var _iterator3 = this.pages[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+            var page = _step3.value;
+
+            page.style.height = '';
+            page.style.width = '';
+            page.style.float = '';
+            page.classList.remove("pg-page");
+            page.classList.remove("pg-active");
+          }
+
+          // remove event listeners from the nav buttons
+        } catch (err) {
+          _didIteratorError3 = true;
+          _iteratorError3 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion3 && _iterator3.return) {
+              _iterator3.return();
+            }
+          } finally {
+            if (_didIteratorError3) {
+              throw _iteratorError3;
+            }
+          }
+        }
+
+        var _arr2 = ["Prev", "Next"];
+        for (var _i2 = 0; _i2 < _arr2.length; _i2++) {
+          var dir = _arr2[_i2];
+          var str = 'nav' + dir + 'El';
+          if (this[str]) {
+            this[str].classList.remove("active");
+            this[str].classList.remove("pg-nav");
+          }
+        }
+
+        // remove cloned nodes
+        if (this.config.infinite) {
+          this._toggleInfinite(true);
+        }
+
+        // kill the slideshow
+        if (this.config.slideshow) {
+          this.slider.stop();
+          this.slider = false;
+        }
+
+        this.initialised = false;
+        delete this.container.pageable;
+      }
+    }
+
+    /** PRIVATE METHODS **/
+
+    /**
+     * Click callback for anchors
+     * @param  {Event} e
+     * @return {Bool}
+     */
+
+  }, {
+    key: '_click',
+    value: function _click(e) {
+      if (e.target.closest) {
+        var anchor = e.target.closest("a");
+
+        if (anchor && this.anchors.includes(anchor.hash)) {
+          e.preventDefault();
+          this.scrollToAnchor(anchor.hash);
+        }
+      }
+    }
+  }, {
+    key: '_preventDefault',
+    value: function _preventDefault(e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    /**
+     * Mousedown / touchstart callback
+     * @param  {Event} e
+     * @return {Bool}
+     */
+
+  }, {
+    key: '_start',
+    value: function _start(e) {
+      var evt = this._getEvent(e);
+
+      if (this.scrolling || this.dragging) {
+        return false;
+      }
+
+      // preventing action here allows us to still have the the event listeners
+      // attached so touch and mouse can be toggled at any time
+      if (e.type === "touchstart") {
+        if (!this.events.touch) {
+          if (!evt.target.closest("a")) {
+            this._preventDefault(e);
+          }
+
+          return false;
+        }
+      }
+
+      if (e.type === "mousedown") {
+        if (!this.events.mouse || e.button !== 0) {
+          return false;
+        }
+      }
+
+      // prevent firing if not on a page
+      if (!evt.target.closest("[data-anchor]")) {
+        return false;
+      }
+
+      this._preventDefault(e);
+
+      this.dragging = this.config.freeScroll;
+
+      // suspend slideshow
+      if (this.config.slideshow) {
+        this.slider.stop();
+      }
+
+      this.down = {
+        x: evt.clientX,
+        y: evt.clientY
+      };
+
+      this.startIndex = this.index;
+
+      this.config.onBeforeStart.call(this, this.index);
+    }
+
+    /**
+     * Mousemove / touchmove callback
+     * @param  {Event} e
+     * @return {Bool}
+     */
+
+  }, {
+    key: '_drag',
+    value: function _drag(e) {
+      if (this.config.freeScroll && this.dragging && !this.scrolling) {
+        var evt = this._getEvent(e);
+        var scrolled = this._limitDrag(evt);
+        var data = this._getData();
+
+        this.container.style.transform = this.horizontal ? 'translate3d(' + scrolled + 'px, 0, 0)' : 'translate3d(0, ' + scrolled + 'px, 0)';
+
+        data.scrolled -= scrolled;
+
+        // update position so user-defined callbacks will recieve the new value
+        this.config.onScroll.call(this, data, "drag");
+
+        // emit the "scroll" event
+        this.emit("scroll", data);
+      }
+    }
+
+    /**
+     * Mouseup / touchend callback
+     * @param  {Event} e
+     * @return {Bool}
+     */
+
+  }, {
+    key: '_stop',
+    value: function _stop(e) {
+      var _this4 = this;
+
+      var evt = this._getEvent(e);
+
+      // increment index
+      var inc = function inc() {
+        return _this4.index < _this4.pages.length - 1 && _this4.index++;
+      };
+
+      // decrement index
+      var dec = function dec() {
+        return 0 < _this4.index && _this4.index--;
+      };
+
+      this.oldIndex = this.index;
+      var diff = Math.abs(evt[this.mouseAxis[this.axis]] - this.down[this.axis]) >= this.config.swipeThreshold;
+      var canChange = this.down && diff;
+
+      // restart slideshow
+      if (this.config.slideshow) {
+        this.slider.start();
+      }
+
+      // free scroll
+      if (this.dragging && !this.scrolling) {
+        var scrolled = this._limitDrag(evt);
+
+        this.dragging = scrolled;
+
+        if (canChange) {
+          if (this.config.infinite) {
+            this._overScroll(scrolled < 0, scrolled);
+          }
+          if (scrolled > 0) {
+            dec();
+          } else {
+            inc();
+          }
+        }
+
+        this._scrollBy(this._getScrollAmount(this.oldIndex) - scrolled);
+
+        this.down = false;
+
+        return;
+      }
+
+      if (this.down && !this.scrolling) {
+        var pos = e[this.mouseAxis[this.axis]] < this.down[this.axis];
+        var neg = e[this.mouseAxis[this.axis]] > this.down[this.axis];
+        if (canChange) {
+          if (this.config.infinite) {
+            this._overScroll(pos);
+          }
+
+          if (pos) {
+            inc();
+          } else if (neg) {
+            dec();
+          }
+        }
+
+        // only scroll if index changed
+        if (this.startIndex === this.index) {
+          this.config.onFinish.call(this, this._getData());
+        } else {
+          this._scrollBy(this._getScrollAmount(this.oldIndex));
+        }
+
+        this.down = false;
+      }
+    }
+
+    /**
+     * Mousewheel callback
+     * @param  {Event} e
+     * @return {Bool}
+     */
+
+  }, {
+    key: '_wheel',
+    value: function _wheel(e) {
+      e.preventDefault();
+
+      if (this.events.wheel && !this.scrolling) {
+        var index = this.index;
+        var oldIndex = this.index;
+        var inc = 0 < e.deltaY;
+
+        if (this.config.infinite) {
+          this._overScroll(inc);
+        }
+
+        inc ? this.index < this.pages.length - 1 && index++ : 0 < this.index && index--;
+
+        if (index !== oldIndex) {
+          this.oldIndex = oldIndex;
+          this.scrollToIndex(index);
+        }
+      }
+    }
+
+    /**
+     * DOMContentLoaded callback
+     * @param  {Event} e
+     * @return {Void}
+     */
+
+  }, {
+    key: '_load',
+    value: function _load(e) {
+      var _this5 = this;
+
+      var id = location.hash;
+
+      if (id) {
+        var index = this.anchors.indexOf(id);
+
+        if (index > -1) {
+
+          var offset = this.config.infinite ? 1 : 0;
+          this.scrollPosition = this.data.window[this.size[this.axis]] * (index + offset);
+
+          var data = this._getData();
+          this.index = index;
+          this.slideIndex = index;
+
+          this.pages.forEach(function (page, i) {
+            page.classList.toggle("pg-active", i === _this5.index);
+          });
+
+          // update nav buttons
+          this._setNavs();
+          this._setPips();
+
+          this.config.onScroll.call(this, data);
+          this.config.onFinish.call(this, data);
+
+          this.emit("scroll", data);
+        }
+      }
+
+      this.update();
+    }
+
+    /**
+     * Get event
+     * @return {Object}
+     */
+
+  }, {
+    key: '_getEvent',
+    value: function _getEvent(e) {
+      if (this.touch) {
+        if (e.type === "touchend") {
+          return e.changedTouches[0];
+        }
+        return e.touches[0];
+      }
+      return e;
+    }
+
+    /**
+     * Get instance data
+     * @return {Object}
+     */
+
+  }, {
+    key: '_getData',
+    value: function _getData() {
+      return {
+        index: this.index,
+        scrolled: this.config.infinite ? this.scrollPosition - this.data.window[this.size[this.axis]] : this.scrollPosition,
+        max: this.config.infinite ? this.scrollSize - this.data.window[this.size[this.axis]] * 2 : this.scrollSize
+      };
+    }
+
+    /**
+     * Allow overscolling for infinite setting
+     * @param  {Boolean} Increasing
+     * @return {Void}
+     */
+
+  }, {
+    key: '_overScroll',
+    value: function _overScroll(inc) {
+      var scrolled = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+      var index = this.index;
+      if (index === this.lastIndex && inc) {
+        index++;
+        this._scrollBy(-this.data.window[this.size[this.axis]] - scrolled, index);
+      } else if (index === 0 && !inc) {
+        index--;
+        this._scrollBy(this.data.window[this.size[this.axis]] - scrolled, index);
+      }
+    }
+
+    /**
+     * Perform the scroll
+     * @param  {Number} amount Amount to scroll
+     * @return {Void}
+     */
+
+  }, {
+    key: '_scrollBy',
+    value: function _scrollBy(amount, index) {
+      var _this6 = this;
+
+      if (this.scrolling) return false;
+
+      this.scrolling = true;
+
+      this.config.onBeforeStart.call(this, this.oldIndex);
+
+      // emit "scroll.before" event
+      this.emit("scroll.before", this._getData());
+
+      if (this.config.slideshow) {
+        this.slider.stop();
+      }
+
+      this.timer = setTimeout(function () {
+        var st = Date.now();
+        var offset = _this6._getScrollOffset();
+
+        // Scroll function
+        var scroll = function scroll() {
+          var now = Date.now();
+          var ct = now - st;
+
+          // Cancel after allotted interval
+          if (ct > _this6.config.animation) {
+            cancelAnimationFrame(_this6.frame);
+
+            _this6.container.style.transform = '';
+
+            _this6.frame = false;
+            _this6.scrolling = false;
+            _this6.dragging = false;
+
+            if (_this6.config.slideshow) {
+              _this6.slider.start();
+            }
+
+            if (_this6.config.infinite) {
+              if (index === _this6.pageCount) {
+                _this6.index = 0;
+              } else if (index === -1) {
+                _this6.index = _this6.lastIndex;
+              }
+            }
+
+            var _data = _this6._getData();
+
+            window.location.hash = _this6.pages[_this6.index].id;
+
+            _this6.pages.forEach(function (page, i) {
+              page.classList.toggle("pg-active", i === _this6.index);
+            });
+
+            _this6.slideIndex = _this6.index;
+
+            _this6._setPips();
+            _this6._setNavs();
+
+            _this6.config.onFinish.call(_this6, _data);
+
+            // emit "scroll.end" event
+            _this6.emit("scroll.end", _data);
+
+            return false;
+          }
+
+          // Update scroll position
+          var start = _this6.dragging ? _this6.dragging : 0;
+          var scrolled = _this6.config.easing(ct, start, amount, _this6.config.animation);
+
+          _this6.container.style.transform = _this6.horizontal ? 'translate3d(' + scrolled + 'px, 0, 0)' : 'translate3d(0, ' + scrolled + 'px, 0)';
+          _this6.scrollPosition = offset[_this6.axis] - scrolled;
+
+          var data = _this6._getData();
+
+          if (_this6.config.infinite) {
+            if (index === _this6.pageCount) {
+              data.scrolled = 0;
+            } else if (index === -1) {
+              data.scrolled = data.max;
+            }
+          }
+
+          _this6.config.onScroll.call(_this6, data);
+
+          // emit "scroll" event
+          _this6.emit("scroll", data);
+
+          // requestAnimationFrame
+          _this6.frame = requestAnimationFrame(scroll);
+        };
+
+        _this6.config.onStart.call(_this6, _this6.pages[_this6.index].id);
+
+        // emit "scroll.start" event
+        _this6.emit("scroll.start", _this6._getData());
+
+        _this6.frame = requestAnimationFrame(scroll);
+      }, this.dragging ? 0 : this.config.delay);
+    }
+
+    /**
+     * Get scroll offsets
+     * @return {Object}
+     */
+
+  }, {
+    key: '_getScrollOffset',
+    value: function _getScrollOffset() {
+      return {
+        x: this.wrapper.scrollLeft,
+        y: this.wrapper.scrollTop
+      };
+    }
+
+    /**
+     * Get scroll amount between indexes
+     * @param  {Number} oldIndex
+     * @param  {Number} newIndex
+     * @return {Number} Amount in px
+     */
+
+  }, {
+    key: '_getScrollAmount',
+    value: function _getScrollAmount(oldIndex, newIndex) {
+      if (newIndex === undefined) {
+        newIndex = this.index;
+      }
+
+      var h = this.data.window[this.size[this.axis]];
+      var a = h * oldIndex;
+      var b = h * newIndex;
+
+      return a - b;
+    }
+  }, {
+    key: '_getScrollBarWidth',
+    value: function _getScrollBarWidth() {
+      var db = document.body;
+      var div = document.createElement("div");
+      var t = 0;
+      return div.style.cssText = "width: 100; height: 100; overflow: scroll; position: absolute; top: -9999;", db.appendChild(div), t = div.offsetWidth - div.clientWidth, db.removeChild(div), t;
+    }
+  }, {
+    key: '_toggleInfinite',
+    value: function _toggleInfinite(destroy) {
+      if (destroy && this.config.infinite) {
+        var _iteratorNormalCompletion4 = true;
+        var _didIteratorError4 = false;
+        var _iteratorError4 = undefined;
+
+        try {
+          for (var _iterator4 = this.clones[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+            var clone = _step4.value;
+
+            this.container.removeChild(clone);
+          }
+        } catch (err) {
+          _didIteratorError4 = true;
+          _iteratorError4 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion4 && _iterator4.return) {
+              _iterator4.return();
+            }
+          } finally {
+            if (_didIteratorError4) {
+              throw _iteratorError4;
+            }
+          }
+        }
+
+        this.config.infinite = false;
+      } else if (!this.config.infinite) {
+        this.config.infinite = true;
+
+        var first = this.pages[0].cloneNode(true);
+        var last = this.pages[this.lastIndex].cloneNode(true);
+
+        first.id = first.id + '-clone';
+        last.id = last.id + '-clone';
+
+        first.classList.add("pg-clone");
+        last.classList.add("pg-clone");
+
+        first.classList.remove("pg-active");
+        last.classList.remove("pg-active");
+
+        this.clones = [first, last];
+
+        this.container.insertBefore(last, this.pages[0]);
+        this.container.appendChild(first);
+      }
+
+      this.update();
+    }
+
+    /**
+     * Limit dragging / swiping
+     * @return {Number}
+     */
+
+  }, {
+    key: '_limitDrag',
+    value: function _limitDrag(e) {
+      var scrolled = e[this.mouseAxis[this.axis]] - this.down[this.axis];
+
+      if (!this.config.infinite) {
+        if (this.index === 0 && scrolled > 0 || this.index === this.pages.length - 1 && scrolled < 0) {
+          scrolled /= 10;
+        }
+      }
+
+      return scrolled;
+    }
+  }, {
+    key: '_setNavs',
+    value: function _setNavs() {
+      if (this.navPrevEl) {
+        this.navPrevEl.classList.toggle("active", this.config.infinite || this.index > 0);
+      }
+
+      if (this.navNextEl) {
+        this.navNextEl.classList.toggle("active", this.config.infinite || this.index < this.pages.length - 1);
+      }
+    }
+
+    /**
+     * Update pips classNames
+     * @param {Number} index
+     */
+
+  }, {
+    key: '_setPips',
+    value: function _setPips(index) {
+      if (this.config.pips) {
+        if (index === undefined) {
+          index = this.index;
+        }
+
+        this.pips.forEach(function (pip, i) {
+          pip.firstElementChild.classList.toggle("active", i == index);
+        });
+      }
+    }
+  }]);
+
+  return Pageable;
+}(_emitter2.default);
+
+exports.default = Pageable;
 
 /***/ }),
-/* 10 */
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var SlideShow = function () {
+  function SlideShow(instance) {
+    _classCallCheck(this, SlideShow);
+
+    this.instance = instance;
+    this.running = false;
+    this.config = this.instance.config.slideshow;
+  }
+
+  _createClass(SlideShow, [{
+    key: "start",
+    value: function start() {
+      var _this = this;
+
+      if (!this.running) {
+        this.running = true;
+        this.instance.slideIndex = this.instance.index;
+        this.instance.interval = setInterval(function () {
+          _this.instance.config.onBeforeStart.call(_this.instance, _this.instance.slideIndex);
+          setTimeout(function () {
+            if (_this.instance.config.infinite) {
+              _this.instance._overScroll(true);
+            }
+            if (_this.instance.index < _this.instance.pages.length - 1) {
+              _this.instance.slideIndex++;
+            } else {
+              _this.instance.slideIndex = 0;
+            }
+            _this.instance.scrollToIndex(_this.instance.slideIndex);
+          }, _this.config.delay || 0);
+        }, this.config.interval);
+      }
+    }
+  }, {
+    key: "stop",
+    value: function stop() {
+      if (this.running) {
+        clearInterval(this.instance.interval);
+        this.instance.slideInterval = false;
+        this.running = false;
+      }
+    }
+  }]);
+
+  return SlideShow;
+}();
+
+exports.default = SlideShow;
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Emitter = function () {
+  function Emitter() {
+    _classCallCheck(this, Emitter);
+  }
+
+  _createClass(Emitter, [{
+    key: "on",
+
+    /**
+     * Add custom event listener
+     * @param  {String} event
+     * @param  {Function} callback
+     * @return {Void}
+     */
+    value: function on(listener, callback) {
+      this.listeners = this.listeners || {};
+      this.listeners[listener] = this.listeners[listener] || [];
+      this.listeners[listener].push(callback);
+    }
+
+    /**
+     * Remove custom listener listener
+     * @param  {String} listener
+     * @param  {Function} callback
+     * @return {Void}
+     */
+
+  }, {
+    key: "off",
+    value: function off(listener, callback) {
+      this.listeners = this.listeners || {};
+      if (listener in this.listeners === false) return;
+      this.listeners[listener].splice(this.listeners[listener].indexOf(callback), 1);
+    }
+
+    /**
+     * Fire custom listener
+     * @param  {String} listener
+     * @return {Void}
+     */
+
+  }, {
+    key: "emit",
+    value: function emit(listener) {
+      this.listeners = this.listeners || {};
+      if (listener in this.listeners === false) return;
+      for (var i = 0; i < this.listeners[listener].length; i++) {
+        this.listeners[listener][i].apply(this, [].slice.call(arguments, 1));
+      }
+    }
+  }]);
+
+  return Emitter;
+}();
+
+exports.default = Emitter;
+
+/***/ }),
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -15138,234 +16531,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 	return ScrollMagic;
 }));
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
- * jQuery plugin paroller.js v1.4.4
- * https://github.com/tgomilar/paroller.js
- * preview: https://tgomilar.github.io/paroller/
- **/
-(function (factory) {
-    'use strict';
-    if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-    } else if (typeof module === 'object' && typeof module.exports === 'object') {
-        module.exports = factory(require('jquery'));
-    }
-    else {
-        factory(jQuery);
-    }
-})(function ($) {
-    'use strict';
-
-    var working = false;
-    var scrollAction = function() {
-        working = false;
-    };
-
-    var setDirection = {
-        bgVertical: function (elem, bgOffset) {
-            return elem.css({'background-position': 'center ' + -bgOffset + 'px'});
-        },
-        bgHorizontal: function (elem, bgOffset) {
-            return elem.css({'background-position': -bgOffset + 'px' + ' center'});
-        },
-        vertical: function (elem, elemOffset, oldTransform) {
-            (oldTransform === 'none' ? oldTransform = '' : true);
-            return elem.css({
-                '-webkit-transform': 'translateY(' + elemOffset + 'px)' + oldTransform,
-                '-moz-transform': 'translateY(' + elemOffset + 'px)' + oldTransform,
-                'transform': 'translateY(' + elemOffset + 'px)' + oldTransform,
-                'transition': 'transform linear',
-                'will-change': 'transform'
-            });
-        },
-        horizontal: function (elem, elemOffset, oldTransform) {
-            (oldTransform === 'none' ? oldTransform = '' : true);
-            return elem.css({
-                '-webkit-transform': 'translateX(' + elemOffset + 'px)' + oldTransform,
-                '-moz-transform': 'translateX(' + elemOffset + 'px)' + oldTransform,
-                'transform': 'translateX(' + elemOffset + 'px)' + oldTransform,
-                'transition': 'transform linear',
-                'will-change': 'transform'
-            });
-        }
-    };
-
-    var setMovement = {
-        factor: function (elem, width, options) {
-            var dataFactor = elem.data('paroller-factor');
-            var factor = (dataFactor) ? dataFactor : options.factor;
-            if (width < 576) {
-                var dataFactorXs = elem.data('paroller-factor-xs');
-                var factorXs = (dataFactorXs) ? dataFactorXs : options.factorXs;
-                return (factorXs) ? factorXs : factor;
-            }
-            else if (width <= 768) {
-                var dataFactorSm = elem.data('paroller-factor-sm');
-                var factorSm = (dataFactorSm) ? dataFactorSm : options.factorSm;
-                return (factorSm) ? factorSm : factor;
-            }
-            else if (width <= 1024) {
-                var dataFactorMd = elem.data('paroller-factor-md');
-                var factorMd = (dataFactorMd) ? dataFactorMd : options.factorMd;
-                return (factorMd) ? factorMd : factor;
-            }
-            else if (width <= 1200) {
-                var dataFactorLg = elem.data('paroller-factor-lg');
-                var factorLg = (dataFactorLg) ? dataFactorLg : options.factorLg;
-                return (factorLg) ? factorLg : factor;
-            } else if (width <= 1920) {
-                var dataFactorXl = elem.data('paroller-factor-xl');
-                var factorXl = (dataFactorXl) ? dataFactorXl : options.factorXl;
-                return (factorXl) ? factorXl : factor;
-            } else {
-                return factor;
-            }
-        },
-        bgOffset: function (offset, factor) {
-            return Math.round(offset * factor);
-        },
-        transform: function (offset, factor, windowHeight, height) {
-            return Math.round((offset - (windowHeight / 2) + height) * factor);
-        }
-    };
-
-    var clearPositions = {
-        background: function (elem) {
-            return elem.css({'background-position': 'unset'});
-        },
-        foreground: function (elem) {
-            return elem.css({
-                'transform' : 'unset',
-                'transition' : 'unset'
-            });
-        }
-    };
-
-    $.fn.paroller = function (options) {
-        var windowHeight = $(window).height();
-        var documentHeight = $(document).height();
-
-        // default options
-        var options = $.extend({
-            factor: 0, // - to +
-            factorXs: 0, // - to +
-            factorSm: 0, // - to +
-            factorMd: 0, // - to +
-            factorLg: 0, // - to +
-            factorXl: 0, // - to +
-            type: 'background', // foreground
-            direction: 'vertical' // horizontal
-        }, options);
-
-        return this.each(function () {
-            var $this = $(this);
-            var width = $(window).width();
-            var offset = $this.offset().top;
-            var height = $this.outerHeight();
-
-            var dataType = $this.data('paroller-type');
-            var dataDirection = $this.data('paroller-direction');
-            var oldTransform = $this.css('transform');
-
-            var type = (dataType) ? dataType : options.type;
-            var direction = (dataDirection) ? dataDirection : options.direction;
-            var factor = setMovement.factor($this, width, options);
-            var bgOffset = setMovement.bgOffset(offset, factor);
-            var transform = setMovement.transform(offset, factor, windowHeight, height);
-
-            if (type === 'background') {
-                if (direction === 'vertical') {
-                    setDirection.bgVertical($this, bgOffset);
-                }
-                else if (direction === 'horizontal') {
-                    setDirection.bgHorizontal($this, bgOffset);
-                }
-            }
-            else if (type === 'foreground') {
-                if (direction === 'vertical') {
-                    setDirection.vertical($this, transform, oldTransform);
-                }
-                else if (direction === 'horizontal') {
-                    setDirection.horizontal($this, transform, oldTransform);
-                }
-            }
-
-            $(window).on('resize', function () {
-                var scrolling = $(this).scrollTop();
-                width = $(window).width();
-                offset = $this.offset().top;
-                height = $this.outerHeight();
-                factor = setMovement.factor($this, width, options);
-
-                bgOffset = Math.round(offset * factor);
-                transform = Math.round((offset - (windowHeight / 2) + height) * factor);
-
-                if (! working) {
-                    window.requestAnimationFrame(scrollAction);
-                    working = true;
-                }
-
-                if (type === 'background') {
-                    clearPositions.background($this);
-                    if (direction === 'vertical') {
-                        setDirection.bgVertical($this, bgOffset);
-                    }
-                    else if (direction === 'horizontal') {
-                        setDirection.bgHorizontal($this, bgOffset);
-                    }
-                }
-                else if ((type === 'foreground') && (scrolling <= documentHeight)) {
-                    clearPositions.foreground($this);
-                    if (direction === 'vertical') {
-                        setDirection.vertical($this, transform);
-                    }
-                    else if (direction === 'horizontal') {
-                        setDirection.horizontal($this, transform);
-                    }
-                }
-            });
-
-            $(window).on('scroll', function () {
-                var scrolling = $(this).scrollTop();
-                documentHeight = $(document).height();
-
-                bgOffset = Math.round((offset - scrolling) * factor);
-                transform = Math.round(((offset - (windowHeight / 2) + height) - scrolling) * factor);
-
-                if (! working) {
-                    window.requestAnimationFrame(scrollAction);
-                    working = true;
-                }
-
-                if (type === 'background') {
-                    if (direction === 'vertical') {
-                        setDirection.bgVertical($this, bgOffset);
-                    }
-                    else if (direction === 'horizontal') {
-                        setDirection.bgHorizontal($this, bgOffset);
-                    }
-                }
-                else if ((type === 'foreground') && (scrolling <= documentHeight)) {
-                    if (direction === 'vertical') {
-                        setDirection.vertical($this, transform, oldTransform);
-                    }
-                    else if (direction === 'horizontal') {
-                        setDirection.horizontal($this, transform, oldTransform);
-                    }
-                }
-            });
-        });
-    };
-});
-
 
 /***/ })
 /******/ ]);
