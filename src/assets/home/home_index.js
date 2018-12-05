@@ -12,7 +12,7 @@ domready(() => {
   const magicController = new ScrollMagic.Controller();
 
   if (home) {
-    $('.carousel-indicators li').click(e => {
+    $('.carousel-indicators li, .carousel-indicators-numbers li, .carousel-indicators-dots li').click(e => {
       $('#carousel-home').carousel(parseInt(e.target.getAttribute('data-section-to')));
     });
 

@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const nodeModules = path.resolve(__dirname, 'node_modules');
-const PurifyCSSPlugin = require('purifycss-webpack');
+const PurgeCSS = require('purgecss-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const AssetsCompressionPlugin = require('brotli-webpack-plugin');
 const ScriptsCompressionPlugin = require('brotli-gzip-webpack-plugin');
@@ -133,15 +133,14 @@ if (process.env.NODE_ENV === 'production') {
         ie8: false,
       },
     }),
-    // new PurifyCSSPlugin({
-    //   minimize: true,
-    //   paths: glob.sync([
-    //     path.join(__dirname, 'web/**/*.html'),
-    //     path.join(__dirname, 'src/views/**/*.html'),
-    //     path.join(__dirname, 'src/assets/**/*.js'),
-    //     path.join(__dirname, 'src/assets/**/*.scss'),
-    //   ])
-    // }),
+    new PurgeCSS({
+      minimize: true,
+      paths: glob.sync([
+        path.join(__dirname, 'src/views/**/*.html'),
+        path.join(__dirname, 'src/assets/**/*.js')
+      ]),
+      whitelistPatterns: [/^pg-/]
+    }),
     new AssetsCompressionPlugin({
       algorithm: 'gzip',
       asset: '[path].gz[query]',
