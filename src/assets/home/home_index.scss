@@ -7,8 +7,16 @@
 a.discover-link {
     color: $blue-secondary;
     font-family: $raleway-bold-italic;
-    font-size: 2rem;
     min-height: 6rem;
+
+    @media all and (min-width: 577px) {
+        font-size: 2rem;
+    }
+
+    @media all and (max-width: 576px) {
+        font-size: 3rem;
+    }
+
     &::after {
         background: $blue-secondary;
         display: inline-block;
@@ -20,6 +28,7 @@ a.discover-link {
         -moz-transition: width .2s ease-out;
         transition: width .2s ease-out;
     }
+
     &:hover {
         color: $blue-secondary;
         text-decoration: none;
@@ -33,6 +42,7 @@ h3.entry-section {
     color: $blue;
     display: inline-block;
     font-size: 3rem;
+
     &::after {
         background: $cyan;
         content: '';
@@ -48,6 +58,7 @@ p {
         background: $blue;
         color: $cyan;
     }
+
     .highlight2 {
         background: $blue-light;
         color: $grey-light;
@@ -55,29 +66,35 @@ p {
 }
 
 section.portfolio-home, section.ux-home, section.web-home {
+
     &.show {
+
         a {
             -webkit-animation: bounceInUp 1s linear forwards .4s;
             -moz-animation: bounceInUp 1s linear forwards .4s;
             animation: bounceInUp 1s linear forwards .4s;
         }
+
         h3 {
             -webkit-animation: bounceInUp 1s linear forwards;
             -moz-animation: bounceInUp 1s linear forwards;
             animation: bounceInUp 1s linear forwards;
         }
+
         p {
             -webkit-animation: bounceInUp 1s linear forwards .2s;
             -moz-animation: bounceInUp 1s linear forwards .2s;
             animation: bounceInUp 1s linear forwards .2s;
         }
     }
+
     a, h3, p {
         opacity: 0;
     }
 }
 
 #home {
+
     .pg-pips {
         opacity: 0;
 

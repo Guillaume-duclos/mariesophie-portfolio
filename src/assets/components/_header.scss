@@ -1,16 +1,39 @@
 header {
-    left: 0;
-    position: absolute;
-    top: 0;
     width: 100vw;
-    z-index: 999;
+
+    @media all and (min-width: 992px) {
+        left: 0;
+        position: absolute;
+        top: 0;
+        z-index: 999;
+    }
+
+    @media all and (max-width: 991px) {
+        background: $black;
+        height: 12rem;
+    }
+
     * {
         color: $white;
     }
+
     .navbar {
         font-family: $raleway-bold;
         font-size: 2.5rem;
+
+        .navbar-brand {
+            margin: 0;
+
+            @media all and (max-width: 991px) {
+                font-family: $raleway-bold;
+                font-size: 5rem;
+                text-align: center;
+                width: 100%;
+            }
+        }
+
         .nav-item {
+
             &::after {
                 background: $white;
                 display: block;
@@ -21,11 +44,26 @@ header {
                 -moz-transition: width .2s ease-out;
                 transition: width .2s ease-out;
             }
+
             &:hover {
                 color: $white;
                 text-decoration: none;
+
                 &::after {
                     width: 100%;
+                }
+            }
+        }
+
+        .navbar-toggler {
+            background: none;
+            border: 0;
+            margin: 0;
+            padding: 0;
+
+            img {
+                @media all and (max-width: 991px) {
+                    width: 40px;
                 }
             }
         }

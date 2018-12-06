@@ -1,13 +1,19 @@
 #carousel-home {
-    height: 100vh;
     margin-left: -15px;
     width: 100vw;
+
+    @media all and (min-width: 992px) {
+        height: 100vh;
+    }
+
+    @media all and (max-width: 991px) {
+        height: calc(100vh - 120px);
+    }
 
     .carousel-indicators-dots, .carousel-indicators, .carousel-indicators-numbers {
         left: unset;
         margin: 0;
         margin-right: 5rem;
-        top: 50%;
         -webkit-transform: translateY(-50%);
         -moz-transform: translateY(-50%);
         transform: translateY(-50%);
@@ -15,10 +21,28 @@
 
     .carousel-indicators, .carousel-indicators-numbers {
         flex-direction: column;
+        top: 50%;
     }
 
     .carousel-indicators-dots {
+        bottom: 0;
         flex-direction: row;
+        left: 50%;
+        margin: 0;
+        padding: 0;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+
+        img {
+            height: 20px;
+            width: 20px;
+        }
+
+        li {
+            margin-left: 1.75rem;
+            margin-right: 1.75rem;
+        }
     }
 
     .carousel-indicators {
@@ -56,8 +80,6 @@
         display: flex;
         justify-content: center;
         list-style: none;
-        margin-left: 15%;
-        padding-left: 0;
         position: absolute;
         z-index: 15;
 
@@ -71,6 +93,8 @@
 
     .carousel-indicators-numbers {
         bottom: 10px;
+        margin-left: 15%;
+        padding-left: 0;
         right: 0;
 
         &:first-child {
@@ -86,21 +110,19 @@
         }
     }
 
-    .carousel-indicators-dots {
-        bottom: 10px;
-
-        img {
-            height: 14px;
-            width: 14px;
-        }
-    }
-
     .img {
         background-position-x: center;
         background-position-y: top;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 100vh;
         width: 100%;
+
+        @media all and (min-width: 992px) {
+            height: 100vh;
+        }
+
+        @media all and (max-width: 991px) {
+            height: calc(100vh - 120px);
+        }
     }
 }

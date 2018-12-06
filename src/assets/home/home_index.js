@@ -10,39 +10,62 @@ domready(() => {
 
   const home = document.querySelector('#home');
   const magicController = new ScrollMagic.Controller();
+  const isDesktop = window.matchMedia('screen and (min-width: 992px)').matches;
 
   if (home) {
     $('.carousel-indicators li, .carousel-indicators-numbers li, .carousel-indicators-dots li').click(e => {
       $('#carousel-home').carousel(parseInt(e.target.getAttribute('data-section-to')));
     });
 
-    new Pageable('#container');
+    $('#carousel-home').on('slide.bs.carousel', e => {
+      $('.carousel-indicators-dots li').removeClass('active');
+      $('.carousel-indicators-dots li[data-section-to="' + e.to + '"]').addClass('active');
+      $('.carousel-indicators-dots li:not(.active) img').attr('src', 'public/home/dots.svg');
+      $('.carousel-indicators-dots li.active img').attr('src', 'public/home/dot.svg');
+    });
+
+    if (isDesktop) {
+      new Pageable('#container', {
+        events: {
+          touch: true
+        }
+      });
+    }
 
     const portfolioBreakpoint = home.querySelector('.portfolio-home');
     const uxBreakpoint = home.querySelector('.ux-home');
     const webBreakpoint = home.querySelector('.web-home');
     const footerBreakpoint = home.querySelector('footer');
+    const pips = home.querySelector('.pg-pips');
 
     new ScrollMagic.Scene({
       triggerElement: portfolioBreakpoint,
       triggerHook: 'onEnter',
-      offset: 300
+      offset: isDesktop === true ? 300 : 200
     })
       .on('enter', () => {
-        document.querySelector('header').classList.add('d-none');
-        home.querySelector('.pg-pips').classList.add('show');
+        if (isDesktop) {
+          document.querySelector('header').classList.add('d-none');
+        }
+        if (pips) {
+          pips.classList.add('show');
+        }
         portfolioBreakpoint.classList.add('show');
       })
       .on('leave', () => {
-        document.querySelector('header').classList.remove('d-none');
-        home.querySelector('.pg-pips').classList.remove('show');
+        if (isDesktop) {
+          document.querySelector('header').classList.remove('d-none');
+        }
+        if (pips) {
+          pips.classList.remove('show');
+        }
       })
       .addTo(magicController);
 
     new ScrollMagic.Scene({
       triggerElement: uxBreakpoint,
       triggerHook: 'onEnter',
-      offset: 500
+      offset: isDesktop === true ? 500 : 100
     })
       .on('enter', () => {
         uxBreakpoint.classList.add('show');
@@ -52,7 +75,7 @@ domready(() => {
     new ScrollMagic.Scene({
       triggerElement: webBreakpoint,
       triggerHook: 'onEnter',
-      offset: 400
+      offset: isDesktop === true ? 400 : 100
     })
       .on('enter', () => {
         webBreakpoint.classList.add('show');
@@ -62,7 +85,7 @@ domready(() => {
     new ScrollMagic.Scene({
       triggerElement: footerBreakpoint,
       triggerHook: 'onEnter',
-      offset: 400
+      offset: isDesktop === true ? 400 : 150
     })
       .on('enter', () => {
         footerBreakpoint.classList.add('show');

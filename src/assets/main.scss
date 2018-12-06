@@ -27,3 +27,13 @@ body {
     overflow-x: hidden;
     width: 100vw;
 }
+
+.vertical-center-mobile {
+    @media all and (max-width: 576px) {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+}

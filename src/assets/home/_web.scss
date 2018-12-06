@@ -20,23 +20,46 @@
     h2 {
         color: $gold;
         font-family: $raleway-bold;
-        font-size: 18rem;
-        margin-bottom: -24rem;
         opacity: 0;
         text-align: center;
         position: relative;
         z-index: 2;
+
+        @media all and (min-width: 992px) {
+            font-size: 18rem;
+            margin-bottom: -24rem;
+        }
+
+        @media all and (max-width: 991px) {
+            font-size: 13rem;
+            margin-bottom: -15rem;
+        }
     }
 
     img {
         display: block;
-        height: 70vh;
         margin-left: auto;
         margin-right: auto;
         opacity: 0;
+
+        @media all and (min-width: 992px) {
+            height: 70vh;
+        }
+
+        @media all and (max-width: 991px) {
+            height: auto;
+            margin-top: 12rem;
+            max-width: calc(100vw - 30px);
+        }
     }
 
     .web-home-text {
-        margin-top: -6rem;
+        @media all and (min-width: 992px) {
+            margin-top: -6rem;
+        }
+
+        @media all and (max-width: 991px) {
+            margin-top: 2rem;
+        }
     }
 }
