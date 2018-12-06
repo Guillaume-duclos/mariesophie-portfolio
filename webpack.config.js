@@ -139,7 +139,7 @@ if (process.env.NODE_ENV === 'production') {
         path.join(__dirname, 'src/views/**/*.html'),
         path.join(__dirname, 'src/assets/**/*.js')
       ]),
-      whitelistPatterns: [/^pg-/]
+      whitelistPatterns: [/^pg-/, /^carousel-/]
     }),
     new AssetsCompressionPlugin({
       algorithm: 'gzip',
