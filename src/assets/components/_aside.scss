@@ -1,0 +1,41 @@
+aside#menu {
+    opacity: 0;
+    position: fixed;
+    -webkit-transition: top .3s linear;
+    -moz-transition: top .3s linear;
+    transition: top .3s linear;
+
+    &.show {
+        -webkit-animation: bounceInRight 1s linear forwards;
+        -moz-animation: bounceInRight 1s linear forwards;
+        animation: bounceInRight 1s linear forwards;
+    }
+
+    button {
+        background: none;
+        border: 0;
+
+        img {
+            width: 40px;
+        }
+    }
+
+    &:not(.open) {
+        right: 10px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%);
+
+        .menu-content {
+            display: none;
+        }
+    }
+    &.open {
+        background: $black ;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        width: 100vw;
+    }
+}

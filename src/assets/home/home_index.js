@@ -3,7 +3,7 @@ import 'bootstrap/js/dist/carousel';
 import 'tilt.js';
 
 import domready from 'domready';
-import Pageable from '../../public/libs/pageable';
+import Pageable from 'pageable/dist/pageable.min';
 import ScrollMagic from 'scrollmagic';
 
 domready(() => {
@@ -26,9 +26,8 @@ domready(() => {
 
     if (isDesktop) {
       new Pageable('#container', {
-        events: {
-          touch: true
-        }
+        animation: 500,
+        swipeThreshold: 200
       });
     }
 
@@ -36,6 +35,7 @@ domready(() => {
     const uxBreakpoint = home.querySelector('.ux-home');
     const webBreakpoint = home.querySelector('.web-home');
     const footerBreakpoint = home.querySelector('footer');
+    const aside = home.querySelector('aside#menu');
     const pips = home.querySelector('.pg-pips');
 
     new ScrollMagic.Scene({
@@ -46,6 +46,7 @@ domready(() => {
       .on('enter', () => {
         if (isDesktop) {
           document.querySelector('header').classList.add('d-none');
+          aside.classList.add('show');
         }
         if (pips) {
           pips.classList.add('show');
@@ -55,6 +56,7 @@ domready(() => {
       .on('leave', () => {
         if (isDesktop) {
           document.querySelector('header').classList.remove('d-none');
+          aside.classList.remove('show');
         }
         if (pips) {
           pips.classList.remove('show');

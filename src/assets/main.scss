@@ -5,9 +5,10 @@
 
 // Libs
 @import '~bootstrap/scss/bootstrap';
-@import '../public/libs/pageable/style/style';
+@import 'components/pageable';
 
 // Components
+@import 'components/aside';
 @import 'components/field';
 @import 'components/header';
 @import 'components/parallax';

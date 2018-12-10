@@ -96,12 +96,14 @@ section.portfolio-home, section.ux-home, section.web-home {
 #home {
 
     .pg-pips {
+        margin-top: 30px;
         opacity: 0;
+        right: 30px;
 
         &.show {
-            -webkit-animation: bounceInRight 1s linear forwards;
-            -moz-animation: bounceInRight 1s linear forwards;
-            animation: bounceInRight 1s linear forwards;
+            -webkit-animation: bounceInRight 1s linear forwards .2s;
+            -moz-animation: bounceInRight 1s linear forwards .2s;
+            animation: bounceInRight 1s linear forwards .2s;
         }
     }
 
