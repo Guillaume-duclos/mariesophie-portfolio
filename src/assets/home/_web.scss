@@ -10,7 +10,7 @@
             animation: bounceInRight 1s linear forwards;
         }
 
-        img {
+        img:not(.finished) {
             -webkit-animation: bounceInLeft 1.5s linear forwards;
             -moz-animation: bounceInLeft 1.5s linear forwards;
             animation: bounceInLeft 1.5s linear forwards;
@@ -40,7 +40,9 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        opacity: 0;
+        &:not(.finished) {
+            opacity: 0;
+        }
 
         @media all and (min-width: 992px) {
             height: 70vh;

@@ -15,6 +15,12 @@
             -moz-animation: bounceInLeft 1.5s linear forwards;
             animation: bounceInLeft 1.5s linear forwards;
         }
+
+        .photos img:not(.finished) {
+            -webkit-animation: bounceInRight 1.5s linear forwards;
+            -moz-animation: bounceInRight 1.5s linear forwards;
+            animation: bounceInRight 1.5s linear forwards;
+        }
     }
 
     a {
@@ -80,7 +86,9 @@
         transform: translate(-50%, -50%);
 
         img {
-
+            &:not(.finished) {
+                opacity: 0;
+            }
             @media all and (min-width: 577px) {
                 width: 465px;
             }

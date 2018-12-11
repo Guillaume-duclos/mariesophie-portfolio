@@ -52,6 +52,9 @@ domready(() => {
           pips.classList.add('show');
         }
         portfolioBreakpoint.classList.add('show');
+        setTimeout(() => {
+          portfolioBreakpoint.querySelector('.photos img').classList.add('finished');
+        }, 1500);
       })
       .on('leave', () => {
         if (isDesktop) {
@@ -65,22 +68,34 @@ domready(() => {
       .addTo(magicController);
 
     new ScrollMagic.Scene({
-      triggerElement: uxBreakpoint,
-      triggerHook: 'onEnter',
-      offset: isDesktop === true ? 500 : 100
-    })
-      .on('enter', () => {
-        uxBreakpoint.classList.add('show');
-      })
-      .addTo(magicController);
-
-    new ScrollMagic.Scene({
       triggerElement: webBreakpoint,
       triggerHook: 'onEnter',
       offset: isDesktop === true ? 400 : 100
     })
       .on('enter', () => {
         webBreakpoint.classList.add('show');
+        setTimeout(() => {
+          webBreakpoint.querySelector('img').classList.add('finished');
+        }, 1500);
+      })
+      .addTo(magicController);
+
+    new ScrollMagic.Scene({
+      triggerElement: uxBreakpoint,
+      triggerHook: 'onEnter',
+      offset: isDesktop === true ? 500 : 100
+    })
+      .on('enter', () => {
+        uxBreakpoint.classList.add('show');
+        setTimeout(() => {
+          uxBreakpoint.querySelector('.julien').classList.add('finished');
+        }, 1500);
+        setTimeout(() => {
+          uxBreakpoint.querySelector('.one-page').classList.add('finished');
+        }, 1700);
+        setTimeout(() => {
+          uxBreakpoint.querySelector('.ipad').classList.add('finished');
+        }, 1900);
       })
       .addTo(magicController);
 

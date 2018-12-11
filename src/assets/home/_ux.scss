@@ -9,19 +9,19 @@
             animation: bounceInLeft 1s linear forwards;
         }
 
-        .ipad {
+        .ipad:not(.finished) {
             -webkit-animation: bounceInRight 1.5s linear forwards .4s;
             -moz-animation: bounceInRight 1.5s linear forwards .4s;
             animation: bounceInRight 1.5s linear forwards .4s;
         }
 
-        .julien {
+        .julien:not(.finished) {
             -webkit-animation: bounceInRight 1.5s linear forwards;
             -moz-animation: bounceInRight 1.5s linear forwards;
             animation: bounceInRight 1.5s linear forwards;
         }
 
-        .one-page {
+        .one-page:not(.finished) {
             -webkit-animation: bounceInRight 1.5s linear forwards .2s;
             -moz-animation: bounceInRight 1.5s linear forwards .2s;
             animation: bounceInRight 1.5s linear forwards .2s;
@@ -43,7 +43,7 @@
         }
     }
 
-    img {
+    img:not(.finished) {
         opacity: 0;
     }
 
