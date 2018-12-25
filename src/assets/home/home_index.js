@@ -7,7 +7,6 @@ import Pageable from 'pageable/dist/pageable.min';
 import ScrollMagic from 'scrollmagic';
 
 domready(() => {
-
   const home = document.querySelector('#home');
   const magicController = new ScrollMagic.Controller();
   const isDesktop = window.matchMedia('screen and (min-width: 992px)').matches;
@@ -38,28 +37,39 @@ domready(() => {
     const aside = home.querySelector('aside#menu');
     const pips = home.querySelector('.pg-pips');
 
+    aside.querySelector('.toggle-aside').addEventListener('click', () => {
+      aside.classList.toggle('open');
+    });
+
+    document.querySelector('.navbar-toggler').addEventListener('click', () => {
+      aside.classList.toggle('open');
+    });
+
     new ScrollMagic.Scene({
       triggerElement: portfolioBreakpoint,
       triggerHook: 'onEnter',
       offset: isDesktop === true ? 300 : 200
     })
       .on('enter', () => {
+        aside.classList.add('show');
         if (isDesktop) {
           document.querySelector('header').classList.add('d-none');
-          aside.classList.add('show');
         }
         if (pips) {
           pips.classList.add('show');
         }
         portfolioBreakpoint.classList.add('show');
         setTimeout(() => {
+          aside.classList.add('finished');
+        }, 1000);
+        setTimeout(() => {
           portfolioBreakpoint.querySelector('.photos img').classList.add('finished');
         }, 1500);
       })
       .on('leave', () => {
+        aside.classList.remove('show', 'finished');
         if (isDesktop) {
           document.querySelector('header').classList.remove('d-none');
-          aside.classList.remove('show');
         }
         if (pips) {
           pips.classList.remove('show');
