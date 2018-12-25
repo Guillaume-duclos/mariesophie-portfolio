@@ -19,8 +19,8 @@ domready(() => {
     $('#carousel-home').on('slide.bs.carousel', e => {
       $('.carousel-indicators-dots li').removeClass('active');
       $('.carousel-indicators-dots li[data-section-to="' + e.to + '"]').addClass('active');
-      $('.carousel-indicators-dots li:not(.active) img').attr('src', 'public/home/dots.svg');
-      $('.carousel-indicators-dots li.active img').attr('src', 'public/home/dot.svg');
+      $('.carousel-indicators-dots li:not(.active) img').attr('src', 'public/general/dots.svg');
+      $('.carousel-indicators-dots li.active img').attr('src', 'public/general/dot.svg');
     });
 
     if (isDesktop) {
