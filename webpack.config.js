@@ -108,8 +108,11 @@ const config = {
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      output: '',
       template: 'src/views/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'about.html',
+      template: 'src/views/about.html'
     })
   ]
 };
