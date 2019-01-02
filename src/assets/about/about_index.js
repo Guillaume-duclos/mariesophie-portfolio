@@ -36,9 +36,6 @@ domready(() => {
       .on('enter', () => {
         aboutBreakpoint.classList.add('show');
         aside.classList.add('show');
-        if (isDesktop) {
-          // document.querySelector('header').classList.add('d-none');
-        }
         if (pips) {
           pips.classList.add('show');
         }
@@ -48,9 +45,6 @@ domready(() => {
       })
       .on('leave', () => {
         aside.classList.remove('show', 'finished');
-        if (isDesktop) {
-          // document.querySelector('header').classList.remove('d-none');
-        }
         if (pips) {
           pips.classList.remove('show');
         }

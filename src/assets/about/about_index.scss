@@ -24,32 +24,6 @@
         }
     }
 
-    header {
-        left: -15px;
-        position: relative;
-
-        .active {
-            position: relative;
-
-            &::after {
-                display: none;
-            }
-
-            img {
-                height: 50px;
-                left: -10%;
-                position: absolute;
-                top: 50%;
-                width: 120%;
-                transform: translateY(-50%);
-            }
-        }
-
-        .navbar {
-            background: $black;
-        }
-    }
-
     #container {
         .about-page {
             &.show {
