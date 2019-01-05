@@ -7,7 +7,6 @@ const nodeModules = path.resolve(__dirname, 'node_modules');
 const PurgeCSS = require('purgecss-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const AssetsCompressionPlugin = require('brotli-webpack-plugin');
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const ScriptsCompressionPlugin = require('brotli-gzip-webpack-plugin');
 
 const resources = path.resolve(__dirname, 'src');
@@ -164,13 +163,7 @@ if (process.env.NODE_ENV === 'production') {
       minRatio: 0.8,
     }),
     // optimize module ids by occurrence count
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    // new SWPrecacheWebpackPlugin({
-    //   cacheId: 'mariesophie-portfolio',
-    //   filename: 'service-worker.js',
-    //   staticFileGlobs: ['**/*.{js,html,css}'],
-    //   minify: true
-    // })
+    new webpack.optimize.OccurrenceOrderPlugin()
   );
 } else {
   config.plugins.push(
