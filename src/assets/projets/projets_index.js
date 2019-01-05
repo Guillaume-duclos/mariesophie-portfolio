@@ -1,5 +1,4 @@
 import domready from 'domready';
-import Pageable from 'pageable/dist/pageable.min';
 import ScrollMagic from 'scrollmagic';
 
 domready(() => {
@@ -8,13 +7,6 @@ domready(() => {
   const isDesktop = window.matchMedia('screen and (min-width: 992px)').matches;
 
   if (projets) {
-    if (isDesktop) {
-      new Pageable('#container', {
-        animation: 500,
-        swipeThreshold: 200
-      });
-    }
-
     const projetsBreakpoint = document.querySelector('.projets-page');
     const footerBreakpoint = projets.querySelector('footer');
     const aside = projets.querySelector('aside#menu');

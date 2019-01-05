@@ -1,0 +1,43 @@
+#projets {
+    .projets-page {
+        min-height: 100vh;
+
+        @media all and (max-width: 576px) {
+            .third-part-projects-img {
+                margin-top: -155px;
+
+                a:nth-child(2n) .wrapper-projet-img {
+                    margin-left: 25px;
+                }
+
+                .wrapper-projet-img {
+                    display: inline-block;
+                    width: calc(50% - 15px) !important;
+                }
+            }
+        }
+
+        .wrapper-projet-img {
+            cursor: pointer;
+            position: relative;
+            margin-bottom: 1.5rem;
+            margin-top: 1.5rem;
+            width: 100%;
+            -webkit-transition: opacity .25s;
+            -moz-transition: opacity .25s;
+            transition: opacity .25s;
+
+            &:hover {
+                opacity: .4;
+            }
+
+            .projet-img {
+                height: auto;
+                left: 0;
+                position: relative;
+                top: 0;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -12,5 +12,11 @@ import './home/home_index';
 import './projets/projets_index';
 
 domready(() => {
+  // if('serviceWorker' in navigator) {
+  //   navigator.serviceWorker.register('/serviceworker.js', {
+  //     scope: '/'
+  //   });
+  // }
+
   lazySizes.init();
 });

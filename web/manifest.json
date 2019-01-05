@@ -1,0 +1,41 @@
+{
+  "short_name": "Marie-Sophie Echasseriau",
+  "name": "Marie-Sophie Echasseriau | Portfolio",
+  "icons": [
+    {
+      "src": "public/icons/icons-64.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "public/icons/icons-128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "public/icons/favicon.png",
+      "type": "image/png",
+      "sizes": "196x196"
+    },
+    {
+      "src": "public/icons/icons-256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "public/icons/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "public/icons/icons-1024.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#ffffff"
+}

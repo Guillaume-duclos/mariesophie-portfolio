@@ -17,6 +17,29 @@
 // Pages
 @import 'about/about_index';
 @import 'home/home_index';
+@import 'projets/projets_index';
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    border: 0 solid rgba($black, .2);
+    &:horizontal { border-bottom-width: 1px; }
+    &:vertical { border-right-width: 1px; }
+}
+
+::-webkit-scrollbar-thumb {
+    border: 0px solid rgba($mention, .4);
+    &:horizontal {
+        border-bottom-width: 4px;
+        &:hover { border-bottom-width: 8px; }
+    }
+    &:vertical {
+        border-right-width: 4px;
+        &:hover { border-right-width: 8px; }
+    }
+}
 
 
 html {
