@@ -117,6 +117,10 @@ const config = {
     new HtmlWebpackPlugin({
       filename: 'projets.html',
       template: 'src/views/projets.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'abc.html',
+      template: 'src/views/abc.html'
     })
   ]
 };

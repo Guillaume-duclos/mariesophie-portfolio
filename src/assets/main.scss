@@ -15,6 +15,7 @@
 @import 'components/scroll-down';
 
 // Pages
+@import 'projet-pages/projet-pages_index';
 @import 'about/about_index';
 @import 'home/home_index';
 @import 'projets/projets_index';
@@ -56,6 +57,29 @@ body {
 #menu:not(.open) .toggle-aside {
     @media all and (max-width: 991px) {
         opacity: .5;
+    }
+}
+
+.breadcrumb {
+    background: transparent;
+    color: $grey-medium;
+    font-family: $raleway-bold;
+
+    .breadcrumb-item {
+        &.active, &::before {
+            color: $grey-medium;
+        }
+
+        a {
+            color: $grey-medium;
+            -webkit-transition: color .2s;
+            -moz-transition: color .2s;
+            transition: color .2s;
+
+            &:active, &:focus, &:hover {
+                color: $grey;
+            }
+        }
     }
 }
 

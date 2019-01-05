@@ -1,4 +1,6 @@
-#about {
+@import "abc";
+
+#projet-pages {
     h1 {
         color: $gold;
         font-family: $raleway-bold;
@@ -24,10 +26,38 @@
         }
     }
 
-    #container {
-        .about-page {
-            &.show {
+    h2 {
+        color: $blue;
+        display: inline-block;
+        font-size: 5rem;
 
+        &::after {
+            background: $cyan;
+            content: '';
+            display: inline-block;
+            height: 1px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+    }
+
+    p {
+        @media all and (min-width: 992px) {
+            line-height: 6rem;
+        }
+
+        @media all and (max-width: 991px) {
+            line-height: 4rem;
+        }
+    }
+
+    #container {
+        section[data-anchor="2"], section[data-anchor="3"] {
+            height: 100vw;
+        }
+
+        .projet-pages {
+            &.show {
                 a:not(.him) {
                     -webkit-animation: bounceInRight 1s linear forwards .6s;
                     -moz-animation: bounceInRight 1s linear forwards .6s;
@@ -59,11 +89,6 @@
         }
     }
 
-    .ms {
-        max-height: 440px;
-        max-width: 100%;
-    }
-
     .pg-pips {
         margin-top: 30px;
         opacity: 0;
@@ -78,52 +103,5 @@
 
     .pg-wrapper {
         overflow-x: hidden;
-    }
-
-    .wrapper-about {
-        @media all and (max-width: 576px) {
-            text-align: center;
-
-            p {
-                margin-top: 2rem;
-            }
-        }
-
-        a {
-            background: $black;
-            border: 0 solid;
-            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0);
-            color: $white;
-            outline: 1px solid;
-            outline-color: rgba(0, 0, 0, .5);
-            outline-offset: 0px;
-            padding: 10px 5px;
-            text-align: center;
-            text-shadow: none;
-            width: 60px;
-            -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
-            -moz-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
-            transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
-
-            &:hover {
-                border: 1px solid;
-                box-shadow: inset 0 0 20px rgba(0, 0, 0, .5), 0 0 20px rgba(0, 0, 0, .2);
-                color: $white;
-                outline-color: rgba(0, 0, 0, 0);
-                outline-offset: 15px;
-                text-decoration: none;
-                text-shadow: 1px 1px 2px #427388;
-            }
-        }
-
-        p {
-            @media all and (min-width: 992px) {
-                line-height: 6rem;
-            }
-
-            @media all and (max-width: 991px) {
-                line-height: 4rem;
-            }
-        }
     }
 }
