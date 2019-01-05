@@ -1,3 +1,9 @@
+(function() {
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js');
+  }
+})();
+
 // Import styles
 import './main.scss';
 
@@ -12,11 +18,5 @@ import './home/home_index';
 import './projets/projets_index';
 
 domready(() => {
-  // if('serviceWorker' in navigator) {
-  //   navigator.serviceWorker.register('/serviceworker.js', {
-  //     scope: '/'
-  //   });
-  // }
-
   lazySizes.init();
 });
