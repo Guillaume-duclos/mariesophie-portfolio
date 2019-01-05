@@ -165,12 +165,12 @@ if (process.env.NODE_ENV === 'production') {
     }),
     // optimize module ids by occurrence count
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new SWPrecacheWebpackPlugin({
-      cacheId: 'mariesophie-portfolio',
-      filename: 'service-worker.js',
-      staticFileGlobs: ['**/*.{js,html,css}'],
-      minify: true
-    })
+    // new SWPrecacheWebpackPlugin({
+    //   cacheId: 'mariesophie-portfolio',
+    //   filename: 'service-worker.js',
+    //   staticFileGlobs: ['**/*.{js,html,css}'],
+    //   minify: true
+    // })
   );
 } else {
   config.plugins.push(
