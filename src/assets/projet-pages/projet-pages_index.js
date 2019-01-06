@@ -16,6 +16,8 @@ domready(() => {
     }
 
     const projetPagesBreakpoint = document.querySelector('.projet-pages');
+    const projetPagesBreakpoint2 = document.querySelector('section[data-anchor="2"]');
+    const projetPagesBreakpoint3 = document.querySelector('section[data-anchor="3"]');
     const footerBreakpoint = projetPages.querySelector('footer');
     const aside = projetPages.querySelector('aside#menu');
     const pips = projetPages.querySelector('.pg-pips');
@@ -52,9 +54,29 @@ domready(() => {
       .addTo(magicController);
 
     new ScrollMagic.Scene({
-      triggerElement: footerBreakpoint,
+      triggerElement: projetPagesBreakpoint2,
+      triggerHook: 'onEnter',
+      offset: isDesktop === true ? 500 : 100
+    })
+      .on('enter', () => {
+        projetPagesBreakpoint2.classList.add('show');
+      })
+      .addTo(magicController);
+
+    new ScrollMagic.Scene({
+      triggerElement: projetPagesBreakpoint3,
       triggerHook: 'onEnter',
       offset: isDesktop === true ? 400 : 150
+    })
+      .on('enter', () => {
+        projetPagesBreakpoint3.classList.add('show');
+      })
+      .addTo(magicController);
+
+    new ScrollMagic.Scene({
+      triggerElement: footerBreakpoint,
+      triggerHook: 'onEnter',
+      offset: isDesktop === true ? 400 : 100
     })
       .on('enter', () => {
         footerBreakpoint.classList.add('show');

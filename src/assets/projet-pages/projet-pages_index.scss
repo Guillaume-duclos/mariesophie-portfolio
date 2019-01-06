@@ -54,6 +54,30 @@
     #container {
         section[data-anchor="2"], section[data-anchor="3"] {
             height: 100vw;
+
+            .col-12 {
+                opacity: 0;
+            }
+        }
+
+        section[data-anchor="2"] {
+            &.show {
+                .col-12 {
+                    -webkit-animation: bounceInRight 1s linear forwards;
+                    -moz-animation: bounceInRight 1s linear forwards;
+                    animation: bounceInRight 1s linear forwards;
+                }
+            }
+        }
+
+        section[data-anchor="3"] {
+            &.show {
+                .col-12 {
+                    -webkit-animation: bounceInLeft 1s linear forwards;
+                    -moz-animation: bounceInLeft 1s linear forwards;
+                    animation: bounceInLeft 1s linear forwards;
+                }
+            }
         }
 
         .projet-pages {
@@ -65,6 +89,12 @@
                 }
 
                 h1 {
+                    -webkit-animation: bounceInRight 1s linear forwards .2s;
+                    -moz-animation: bounceInRight 1s linear forwards .2s;
+                    animation: bounceInRight 1s linear forwards .2s;
+                }
+
+                h2 {
                     -webkit-animation: bounceInLeft 1s linear forwards;
                     -moz-animation: bounceInLeft 1s linear forwards;
                     animation: bounceInLeft 1s linear forwards;
@@ -83,7 +113,7 @@
                 }
             }
 
-            a:not(.him), h1, img:not(.him), p {
+            a:not(.him), h1, h2, img:not(.him), p {
                 opacity: 0;
             }
         }
