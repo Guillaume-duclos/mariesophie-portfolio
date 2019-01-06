@@ -153,6 +153,10 @@ const config = {
     new HtmlWebpackPlugin({
       filename: 'portugal.html',
       template: 'src/views/portugal.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'animaux.html',
+      template: 'src/views/animaux.html'
     })
   ]
 };
