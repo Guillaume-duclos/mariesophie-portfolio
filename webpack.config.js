@@ -157,6 +157,10 @@ const config = {
     new HtmlWebpackPlugin({
       filename: 'animaux.html',
       template: 'src/views/animaux.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'angers.html',
+      template: 'src/views/angers.html'
     })
   ]
 };
