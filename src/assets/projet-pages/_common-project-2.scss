@@ -1,0 +1,49 @@
+.common-project-2 {
+    .first {
+        width: 100%;
+
+        @media (max-width: 991px) and (min-width: 577px) {
+            position: relative;
+            top: 25%;
+        }
+    }
+
+    .second {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%);
+
+        @media all and (max-width: 576px) {
+            max-width: 100%;
+        }
+    }
+
+    .third:not(.not-so-big) {
+        width: 100%;
+
+        @media all and (min-width: 1441px) {
+            width: 80%;
+        }
+    }
+
+    .third {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%);
+
+        &.not-so-big {
+            @media all and (min-width: 992px) {
+                width: 50%;
+            }
+
+            @media all and (max-width: 991px) {
+                width: 80%;
+            }
+        }
+    }
+}
