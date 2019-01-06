@@ -135,6 +135,10 @@ const config = {
       template: 'src/views/julien.html'
     }),
     new HtmlWebpackPlugin({
+      filename: 'moventes.html',
+      template: 'src/views/moventes.html'
+    }),
+    new HtmlWebpackPlugin({
       filename: 'girafe.html',
       template: 'src/views/girafe.html'
     })

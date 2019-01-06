@@ -12,6 +12,16 @@
         }
     }
 
+    .not-so-big {
+        @media all and (min-width: 992px) {
+            width: 50%;
+        }
+
+        @media all and (max-width: 991px) {
+            width: 80%;
+        }
+    }
+
     .second {
         position: absolute;
         right: 0;
@@ -39,15 +49,5 @@
         -webkit-transform: translateY(-50%);
         -moz-transform: translateY(-50%);
         transform: translateY(-50%);
-
-        &.not-so-big {
-            @media all and (min-width: 992px) {
-                width: 50%;
-            }
-
-            @media all and (max-width: 991px) {
-                width: 80%;
-            }
-        }
     }
 }
