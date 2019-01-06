@@ -7033,13 +7033,16 @@ header {
     opacity: 1;
     transform: scaleY(1) translateY(-10px); } }
 
+@media all and (min-width: 577px) and (max-width: 991px) {
+  .common-project .first {
+    position: relative; } }
+
 @media all and (min-width: 992px) {
   .common-project .first.first-landscape {
     width: 60%; } }
 
 @media all and (min-width: 577px) and (max-width: 991px) {
   .common-project .first.first-landscape {
-    position: relative;
     top: 25%;
     width: 80%; } }
 
@@ -7053,6 +7056,10 @@ header {
   @media all and (min-width: 1441px) {
     .common-project .first.first-portrait {
       width: 30%; } }
+  @media all and (min-width: 577px) and (max-width: 991px) {
+    .common-project .first.first-portrait {
+      top: 12.5%;
+      width: 60%; } }
 
 .common-project .second, .common-project .third, .common-project .pen {
   position: relative;
