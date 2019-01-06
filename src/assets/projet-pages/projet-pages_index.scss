@@ -54,7 +54,7 @@
     }
 
     #container {
-        &:not(footer) {
+        *:not(footer) {
             p {
                 @media all and (min-width: 992px) {
                     line-height: 6rem;
