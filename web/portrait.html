@@ -21,11 +21,11 @@
         <meta name="author" content="Marie-Sophie Echasserieau">
         <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes, initial-scale=1, minimum-scale=1, maximum-scale=5">
         <meta name="theme-color" content="#ffffff">
-        <title>Marie-Sophie Echasseriau | About</title>
+        <title>Marie-Sophie Echasseriau | Portrait</title>
         <link rel="shortcut icon" href="public/icons/favicon.png" type="image/x-icon" />
         <link rel="manifest" href="manifest.json" />
-    </head>
-    <body id="about">
+    <link href="app.css" rel="stylesheet"></head>
+    <body id="projet-pages">
         <aside id="menu">
             <button class="toggle-aside" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Ouvre le menu">
                 <img class="icon-burger" src="public/general/burger.svg" alt="Icon Open Menu" />
@@ -34,7 +34,7 @@
             <div class="menu-content">
                 <div class="row">
                     <div class="col-12 col-lg-2">
-                        <h2 class="him">About</h2>
+                        <h2 class="him">Portrait</h2>
                         <ul class="socials-links">
                             <li>
                                 <a class="nav-link" href="#">
@@ -57,10 +57,10 @@
                         <a class="menu-content-nav-item" href="index.html">Home</a>
                     </div>
                     <div class="col-12 col-lg-2">
-                        <a class="menu-content-nav-item active" href="about.html">About <span class="sr-only">(current)</span></a>
+                        <a class="menu-content-nav-item" href="about.html">About</a>
                     </div>
                     <div class="col-12 col-lg-2">
-                        <a class="menu-content-nav-item" href="projets.html">Projets</a>
+                        <a class="menu-content-nav-item active" href="projets.html">Projets <span class="sr-only">(current)</span></a>
                     </div>
                     <div class="col-12 col-lg-2">
                         <a class="menu-content-nav-item" href="public/cv.pdf" target="_blank" rel="noreferrer noopener">CV</a>
@@ -69,8 +69,8 @@
                 </div>
             </div>
         </aside>
-        <div id="container">
-            <section class="container-fluid about-page" data-anchor="1">
+        <div id="container" class="common-project">
+            <section class="container-fluid projet-pages" data-anchor="1">
                 <div class="row row-header">
                     <div class="col-12">
                         <header>
@@ -78,15 +78,15 @@
                                 <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Ouvre le menu">
                                     <img class="him" src="public/general/burger.svg" alt="Icon Toggle Menu">
                                 </button>
-                                <a class="navbar-brand d-lg-none him" href="javascript:void(0);">About</a>
+                                <a class="navbar-brand d-lg-none him" href="javascript:void(0);">Portrait</a>
                                 <div class="collapse navbar-collapse" id="navbar">
                                     <div class="navbar-nav ml-auto">
                                         <a class="nav-item nav-link mx-4 him" href="index.html">Home</a>
-                                        <a class="nav-item nav-link mx-4 active him" href="about.html">
-                                            About <span class="sr-only">(current)</span>
-                                            <img class="him" src="public/general/four.png" alt="">
+                                        <a class="nav-item nav-link mx-4 him" href="about.html">About</a>
+                                        <a class="nav-item nav-link mx-4 active him" href="projets.html">
+                                            Projets <span class="sr-only">(current)</span>
+                                            <img class="him" src="public/general/four.png" alt="Active Menu Image">
                                         </a>
-                                        <a class="nav-item nav-link mx-4 him" href="projets.html">Projets</a>
                                         <a class="nav-item nav-link mx-4 him" href="public/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
                                     </div>
                                 </div>
@@ -99,31 +99,42 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mb-0 mt-4">
                                 <li class="breadcrumb-item"><a class="him" href="index.html">Accueil</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">About</li>
+                                <li class="breadcrumb-item"><a class="him" href="projets.html">Projets</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Portrait</li>
                             </ol>
                         </nav>
-                        <h1>About</h1>
+                        <h1>Web</h1>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-md-4 col-xl-3 offset-md-1">
-                        <img class="ms lazyload" data-src="public/about/moi.jpg" alt="Marie-Sophie Echasseriau">
+                <div class="row mt-lg-5 mt-xl-0">
+                    <div class="col-12 col-md-6 text-center">
+                        <img data-src="public/portrait/maxiiglesias.jpg" alt="Portrait Maxi Iglesias" class="lazyload first first-landscape" />
                     </div>
-                    <div class="col-12 col-md-6 col-lg-5 offset-md-1">
-                        <div class="wrapper-about">
-                            <p>
-                                Passionnée de design, art et du digital, je suis actuellement à L’ECV Digital. Hésitante entre le
-                                web design et l'ergonomie UX je continue mon parcours à l'école ECV digital où j'appronfondis
-                                mes connaissances de la créativité digital.
-                                Avant tout, apprendre signifie pour moi élargir mes horizons et approfondir mon inspiration, car
-                                oui l’inspiration vient ou ne vient pas.
-                            </p>
-                            <a class="d-inline-block" href="public/cv.pdf"><span>CV</span></a>
-                        </div>
+                    <div class="col-12 col-md-5 col-lg-4 text-center text-md-left">
+                        <h2>Portrait</h2>
+                        <p>
+                            Étant passionnée des séries <span class="highlight">espagnoles</span> et particulièrement de l'acteur Maxi Iglesias j’ai
+                            décidé de faire son <span class="highlight">portrait</span> à la gouache au format A3.
+                        </p>
                     </div>
                 </div>
             </section>
-            <footer class="container-fluid" data-anchor="2">
+            <section class="container-fluid" data-anchor="2">
+                <div class="row justify-content-end h-100">
+                    <div class="col-12">
+                        <img data-src="public/general/rottring.svg" alt="Stylo" class="lazyload pen" />
+                        <img data-src="public/portrait/maxi.png" alt="Portrait Maxi" class="lazyload second" />
+                    </div>
+                </div>
+            </section>
+            <section class="container-fluid" data-anchor="3">
+                <div class="row h-100">
+                    <div class="col-12 text-center">
+                        <img data-src="public/portrait/cesar.jpg" alt="Portrait Cesar" class="lazyload third" />
+                    </div>
+                </div>
+            </section>
+            <footer class="container-fluid" data-anchor="4">
                 <div class="row h-100">
                     <div class="col-12">
                         <h3>Alors on travaille ensemble ?</h3>
@@ -163,5 +174,5 @@
                 </div>
             </footer>
         </div>
-    </body>
+    <script type="text/javascript" src="app.js"></script></body>
 </html>

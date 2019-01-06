@@ -123,6 +123,14 @@ const config = {
       template: 'src/views/abc.html'
     }),
     new HtmlWebpackPlugin({
+      filename: 'portrait.html',
+      template: 'src/views/portrait.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'flatdesign.html',
+      template: 'src/views/flatdesign.html'
+    }),
+    new HtmlWebpackPlugin({
       filename: 'girafe.html',
       template: 'src/views/girafe.html'
     })

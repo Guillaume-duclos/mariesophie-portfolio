@@ -54,7 +54,7 @@ domready(() => {
     new ScrollMagic.Scene({
       triggerElement: footerBreakpoint,
       triggerHook: 'onEnter',
-      offset: isDesktop === true ? 400 : 150
+      offset: isDesktop === true ? 400 : 200
     })
       .on('enter', () => {
         footerBreakpoint.classList.add('show');

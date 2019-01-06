@@ -1,5 +1,32 @@
-.girafe {
-    .cadre, .girafe, .pen {
+.common-project {
+    .first {
+        &.first-landscape {
+            @media all and (min-width: 992px) {
+                width: 60%;
+            }
+
+            @media all and (min-width: 577px) and (max-width: 991px) {
+                position: relative;
+                top: 25%;
+                width: 80%;
+            }
+
+            @media all and (max-width: 576px) {
+                margin-bottom: 3rem;
+                width: 70%;
+            }
+        }
+
+        &.first-portrait {
+            width: 40%;
+
+            @media all and (min-width: 1441px) {
+                width: 30%;
+            }
+        }
+    }
+
+    .second, .third, .pen {
         position: relative;
         top: 50%;
         -webkit-transform: translateY(-50%);
@@ -7,7 +34,7 @@
         transform: translateY(-50%);
     }
 
-    .cadre {
+    .second {
         @media all and (min-width: 577px) {
             width: 50%;
         }
@@ -18,7 +45,7 @@
         }
     }
 
-    .girafe {
+    .third {
         @media all and (min-width: 577px) {
             width: 60%;
         }
@@ -26,10 +53,6 @@
         @media all and (max-width: 576px) {
             width: 90%;
         }
-    }
-
-    .mur {
-        width: 40%;
     }
 
     .pen {

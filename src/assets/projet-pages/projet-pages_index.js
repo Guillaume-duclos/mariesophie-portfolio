@@ -66,7 +66,7 @@ domready(() => {
     new ScrollMagic.Scene({
       triggerElement: projetPagesBreakpoint3,
       triggerHook: 'onEnter',
-      offset: isDesktop === true ? 400 : 150
+      offset: isDesktop === true ? 400 : 25
     })
       .on('enter', () => {
         projetPagesBreakpoint3.classList.add('show');
@@ -76,7 +76,7 @@ domready(() => {
     new ScrollMagic.Scene({
       triggerElement: footerBreakpoint,
       triggerHook: 'onEnter',
-      offset: isDesktop === true ? 400 : 100
+      offset: isDesktop === true ? 400 : 200
     })
       .on('enter', () => {
         footerBreakpoint.classList.add('show');

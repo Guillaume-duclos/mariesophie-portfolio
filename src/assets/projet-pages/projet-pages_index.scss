@@ -1,5 +1,5 @@
 @import "abc";
-@import "girafe";
+@import "common-project";
 
 #projet-pages {
     h1 {
@@ -27,7 +27,7 @@
         }
     }
 
-    h2 {
+    h2:not(.him) {
         color: $blue;
         display: inline-block;
         font-size: 5rem;
