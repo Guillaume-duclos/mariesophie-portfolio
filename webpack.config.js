@@ -161,6 +161,10 @@ const config = {
     new HtmlWebpackPlugin({
       filename: 'angers.html',
       template: 'src/views/angers.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'dame.html',
+      template: 'src/views/dame.html'
     })
   ]
 };

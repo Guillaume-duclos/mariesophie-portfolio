@@ -21,11 +21,11 @@
         <meta name="author" content="Marie-Sophie Echasserieau">
         <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes, initial-scale=1, minimum-scale=1, maximum-scale=5">
         <meta name="theme-color" content="#ffffff">
-        <title>Marie-Sophie Echasseriau | Projets</title>
+        <title>Marie-Sophie Echasseriau | Dame dégradée</title>
         <link rel="shortcut icon" href="public/icons/favicon.png" type="image/x-icon" />
         <link rel="manifest" href="manifest.json" />
-    <link href="app.css" rel="stylesheet"></head>
-    <body id="projets">
+    </head>
+    <body id="projet-pages">
         <aside id="menu">
             <button class="toggle-aside" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Ouvre le menu">
                 <img class="icon-burger" src="public/general/burger.svg" alt="Icon Open Menu" />
@@ -34,7 +34,7 @@
             <div class="menu-content">
                 <div class="row">
                     <div class="col-12 col-lg-2">
-                        <h2 class="him">Projets</h2>
+                        <h2 class="him">Dame</h2>
                         <ul class="socials-links">
                             <li>
                                 <a class="nav-link" href="#">
@@ -69,8 +69,8 @@
                 </div>
             </div>
         </aside>
-        <div id="container">
-            <section class="container-fluid projets-page" data-anchor="1">
+        <div id="container" class="common-project">
+            <section class="container-fluid projet-pages" data-anchor="1">
                 <div class="row row-header">
                     <div class="col-12">
                         <header>
@@ -78,7 +78,7 @@
                                 <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Ouvre le menu">
                                     <img class="him" src="public/general/burger.svg" alt="Icon Toggle Menu">
                                 </button>
-                                <a class="navbar-brand d-lg-none him" href="javascript:void(0);">Projets</a>
+                                <a class="navbar-brand d-lg-none him" href="javascript:void(0);">Dame</a>
                                 <div class="collapse navbar-collapse" id="navbar">
                                     <div class="navbar-nav ml-auto">
                                         <a class="nav-item nav-link mx-4 him" href="index.html">Home</a>
@@ -94,77 +94,47 @@
                         </header>
                     </div>
                 </div>
-                <div class="row justify-content-center mt-lg-5 mt-xl-0">
-                    <div class="col-6 col-md-4 col-xl-3">
-                        <a href="abc.html">
-                            <div class="wrapper-projet-img">
-                                <img data-src="public/projets/pc.png" alt="Projet ABC Terroirs" class="lazyload projet-img" />
-                            </div>
-                        </a>
-                        <a href="portrait.html">
-                            <div class="wrapper-projet-img">
-                                <img data-src="public/projets/maxiiglesias.jpg" alt="Projet Maxiiglesias" class="lazyload projet-img" />
-                            </div>
-                        </a>
-                        <a href="flatdesign.html">
-                            <div class="wrapper-projet-img">
-                                <img data-src="public/projets/flatdesign.jpg" alt="Projet Flat-Design" class="lazyload projet-img" />
-                            </div>
-                        </a>
-                        <a href="julien.html">
-                            <div class="wrapper-projet-img">
-                                <img data-src="public/projets/julien.jpg" alt="Projet Julien" class="lazyload projet-img" />
-                            </div>
-                        </a>
-                        <a href="moventes.html">
-                            <div class="wrapper-projet-img">
-                                <img data-src="public/projets/moventes.png" alt="Projet Moventes" class="lazyload projet-img" />
-                            </div>
-                        </a>
+                <div class="row">
+                    <div class="col-12 col-lg-11">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 mt-4">
+                                <li class="breadcrumb-item"><a class="him" href="index.html">Accueil</a></li>
+                                <li class="breadcrumb-item"><a class="him" href="projets.html">Projets</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Dame dégradée</li>
+                            </ol>
+                        </nav>
+                        <h1 class="art">Art</h1>
                     </div>
-                    <div class="col-6 col-md-4 col-xl-3">
-                        <a href="girafe.html">
-                            <div class="wrapper-projet-img">
-                                <img data-src="public/projets/girafe.jpg" alt="Projet Girafe" class="lazyload projet-img" />
-                            </div>
-                        </a>
-                        <a href="oiseaux.html">
-                            <div class="wrapper-projet-img">
-                                <img data-src="public/projets/oiseaux.jpg" alt="Projet Oiseaux" class="lazyload projet-img" />
-                            </div>
-                        </a>
-                        <a href="pave.html">
-                            <div class="wrapper-projet-img">
-                                <img data-src="public/projets/pavedessin.jpg" alt="Projet Pave Dessin" class="lazyload projet-img" />
-                            </div>
-                        </a>
+                </div>
+                <div class="row mt-lg-5 mt-xl-0">
+                    <div class="col-12 col-md-6 text-center">
+                        <img data-src="public/dame/dame.jpg" alt="Dame Dégradée" class="lazyload first first-portrait" />
                     </div>
-                    <div class="col-12 col-md-4 col-xl-3 third-part-projects-img">
-                        <div class="wrapper-projet-img decoy"></div>
-                        <a href="portugal.html">
-                            <div class="wrapper-projet-img">
-                                <img data-src="public/projets/ipad.png" alt="Projet Ipad" class="lazyload projet-img" />
-                            </div>
-                        </a>
-                        <a href="animaux.html">
-                            <div class="wrapper-projet-img">
-                                <img data-src="public/projets/animaux.jpg" alt="Projet Animaux" class="lazyload projet-img" />
-                            </div>
-                        </a>
-                        <a href="angers.html">
-                            <div class="wrapper-projet-img">
-                                <img data-src="public/projets/angers.jpg" alt="Projet Angers" class="lazyload projet-img" />
-                            </div>
-                        </a>
-                        <a href="dame.html">
-                            <div class="wrapper-projet-img">
-                                <img data-src="public/projets/damemock.jpg" alt="Projet Dame Mock" class="lazyload projet-img" />
-                            </div>
-                        </a>
+                    <div class="col-12 col-md-5 col-lg-4 text-center text-md-left">
+                        <h2>Dame dégradée</h2>
+                        <p>
+                            Cette peinture fût réalisée au cours de ma première année <span class="highlight">préparatoire</span> à l'école Brassart
+                            Nantes, dans le but d'apprendre la technique de <span class="highlight">dégradé</span> réalisé à la gouache au format A3.
+                        </p>
                     </div>
                 </div>
             </section>
-            <footer class="container-fluid" data-anchor="2">
+            <section class="container-fluid" data-anchor="2">
+                <div class="row justify-content-end h-100">
+                    <div class="col-12">
+                        <img data-src="public/general/rottring.svg" alt="Stylo" class="lazyload pen" />
+                        <img data-src="public/dame/damedegrade.jpg" alt="Dame Dégradée dessin" class="lazyload second" />
+                    </div>
+                </div>
+            </section>
+            <section class="container-fluid" data-anchor="3">
+                <div class="row h-100">
+                    <div class="col-12 text-center">
+                        <img data-src="public/dame/damemock.jpg" alt="Dame dégradée mockup" class="lazyload third" />
+                    </div>
+                </div>
+            </section>
+            <footer class="container-fluid" data-anchor="4">
                 <div class="row h-100">
                     <div class="col-12">
                         <h3>Alors on travaille ensemble ?</h3>
@@ -204,5 +174,5 @@
                 </div>
             </footer>
         </div>
-    <script type="text/javascript" src="app.js"></script></body>
+    </body>
 </html>
