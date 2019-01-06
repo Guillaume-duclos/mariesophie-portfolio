@@ -54,16 +54,18 @@
     }
 
     #container {
-        p {
-            @media all and (min-width: 992px) {
-                line-height: 6rem;
-            }
+        &:not(footer) {
+            p {
+                @media all and (min-width: 992px) {
+                    line-height: 6rem;
+                }
 
-            @media all and (max-width: 991px) {
-                line-height: 4rem;
+                @media all and (max-width: 991px) {
+                    line-height: 4rem;
+                }
             }
         }
-        
+
         section[data-anchor="2"], section[data-anchor="3"] {
             height: 100vw;
 
