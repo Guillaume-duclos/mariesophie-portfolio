@@ -2,6 +2,10 @@
     .first {
         width: 100%;
 
+        @media all and (min-width: 1441px) {
+            width: 80%;
+        }
+
         @media (max-width: 991px) and (min-width: 577px) {
             position: relative;
             top: 25%;
