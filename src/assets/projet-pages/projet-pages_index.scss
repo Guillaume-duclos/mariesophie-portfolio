@@ -3,8 +3,19 @@
 
 #projet-pages {
     h1 {
-        color: $gold;
         font-family: $raleway-bold;
+
+        &.art {
+            color: $grey-medium;
+        }
+
+        &.ux {
+            color: $peach;
+        }
+
+        &.web {
+            color: $gold;
+        }
 
         @media all and (min-width: 577px) and (max-width: 1024px) {
             margin-bottom: 3rem;

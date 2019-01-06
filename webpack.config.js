@@ -145,6 +145,10 @@ const config = {
     new HtmlWebpackPlugin({
       filename: 'oiseaux.html',
       template: 'src/views/oiseaux.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'pave.html',
+      template: 'src/views/pave.html'
     })
   ]
 };
