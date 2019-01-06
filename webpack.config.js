@@ -149,6 +149,10 @@ const config = {
     new HtmlWebpackPlugin({
       filename: 'pave.html',
       template: 'src/views/pave.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'portugal.html',
+      template: 'src/views/portugal.html'
     })
   ]
 };
