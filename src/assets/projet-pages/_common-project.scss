@@ -1,12 +1,16 @@
 .common-project {
     .first {
+        @media all and (min-width: 577px) and (max-width: 991px) {
+            position: relative;
+        }
+
+
         &.first-landscape {
             @media all and (min-width: 992px) {
                 width: 60%;
             }
 
             @media all and (min-width: 577px) and (max-width: 991px) {
-                position: relative;
                 top: 25%;
                 width: 80%;
             }
@@ -22,6 +26,11 @@
 
             @media all and (min-width: 1441px) {
                 width: 30%;
+            }
+
+            @media all and (min-width: 577px) and (max-width: 991px) {
+                top: 12.5%;
+                width: 60%;
             }
         }
     }
