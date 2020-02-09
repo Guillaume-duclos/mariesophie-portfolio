@@ -49,6 +49,7 @@
         right: 45px;
 
         li {
+            border: 0px solid red;
             background: $white;
             height: 5px;
             margin-bottom: 2.5rem;
@@ -86,8 +87,8 @@
         li {
             color: $white;
             cursor: pointer;
-            font-family: $raleway-bold;
-            font-size: 3.5rem;
+            font-family: Abril-Fatface;
+            font-size: 32px;
         }
     }
 

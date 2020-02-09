@@ -1,7 +1,7 @@
 {
   "name": "mariesophie-portfolio",
-  "author": "Trystan Eveno",
-  "version": "1.0.0",
+  "author": "Guillaume Duclos",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "lint": "eslint src/**",
@@ -44,7 +44,7 @@
     "glob-all": "^3.1.0",
     "html-webpack-plugin": "^3.2.0",
     "live-server": "^1.2.0",
-    "node-sass": "^4.8.3",
+    "node-sass": "^4.13.1",
     "purgecss-webpack-plugin": "^1.4.0",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.20.3",

@@ -17,6 +17,54 @@
             }
         }
 
+        .project-menu {
+            margin: 60px auto 50px auto;
+
+            ul {
+                display: flex;
+                justify-content: center;
+
+                li {
+                    list-style-type: none;
+
+                    a {
+                        font-family: $raleway-bold;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 21px;
+                        text-align: center;
+                        letter-spacing: 0.1em;
+                        color: #000000;
+                        text-decoration: none;
+                    }
+
+                    &:not(:first-child) {
+                        margin-left: 30px;
+                    }
+
+                    &:not(:last-child) {
+                        margin-right: 30px;
+                    }
+                }
+
+                .active {
+                    position: relative;
+
+                    &::after {
+                        background: $cyan;
+                        content: "";
+                        height: 5px;
+                        position: absolute;
+                        width: 100%;
+                        bottom: -15px;
+                        left: 0;
+                        right: 0;
+                    }
+                }
+            }
+        }
+
         .wrapper-projet-img {
             cursor: pointer;
             position: relative;

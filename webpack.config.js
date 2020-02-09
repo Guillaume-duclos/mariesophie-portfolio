@@ -115,8 +115,20 @@ const config = {
       template: 'src/views/about.html'
     }),
     new HtmlWebpackPlugin({
-      filename: 'projets.html',
-      template: 'src/views/projets.html'
+      filename: 'projets-tous.html',
+      template: 'src/views/projets-tous.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'projets-art.html',
+      template: 'src/views/projets-art.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'projets-ux.html',
+      template: 'src/views/projets-ux.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'projets-web.html',
+      template: 'src/views/projets-web.html'
     }),
     new HtmlWebpackPlugin({
       filename: 'abc.html',

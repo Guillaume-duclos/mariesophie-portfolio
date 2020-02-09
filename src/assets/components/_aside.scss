@@ -105,6 +105,13 @@ aside#menu {
                 }
             }
 
+            .menu-content-nav-item-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+            }
+
             .col-lg-2 {
                 .socials-links {
                     margin-top: 6rem;
@@ -133,17 +140,14 @@ aside#menu {
                     color: $white;
                     font-size: 5rem;
                     font-family: $raleway-bold;
-                    left: 50%;
-                    position: absolute;
-                    top: 50%;
-                    -webkit-transform: translate(-50%, -50%);
-                    -moz-transform: translate(-50%, -50%);
-                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    margin: 10px auto;
+                    position: relative;
 
                     &::after {
                         background: $white;
                         display: block;
-                        content:'';
+                        content: '';
                         height: 5px;
                         width: 0;
                         -webkit-transition: width .2s ease-out;
@@ -169,6 +173,19 @@ aside#menu {
                             top: 50%;
                             width: 100%;
                         }
+                    }
+                }
+
+                .subline {
+
+                    &::after {
+                        background: $white;
+                        display: block;
+                        content: '';
+                        height: 2px;
+                        width: 100%;
+                        position: absolute;
+                        bottom: 12px;
                     }
                 }
             }

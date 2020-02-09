@@ -5,7 +5,7 @@ footer {
 
     &.show {
 
-        h3 {
+        h3, .yes {
             -webkit-animation: bounceInLeft 1s linear forwards;
             -moz-animation: bounceInLeft 1s linear forwards;
             animation: bounceInLeft 1s linear forwards;
@@ -28,13 +28,37 @@ footer {
     }
 
     h3 {
-        color: $grey;
+        color: #333333;
         font-family: $raleway-bold;
         margin-bottom: 0;
         opacity: 0;
         position: absolute;
         text-align: center;
         top: calc(50% - 84px);
+
+        @media all and (min-width: 577px){
+            font-size: 7rem;
+            width: 100%;
+        }
+
+        @media all and (max-width: 576px){
+            font-size: 4rem;
+            width: calc(100% - 30px);
+        }
+    }
+
+    .yes {
+        font-family: Abril-Fatface;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 64px;
+        line-height: 86px;
+        text-align: center;
+        color: #254FFF;
+        margin-bottom: 0;
+        position: absolute;
+        top: calc(60%);
+        text-decoration: none;
 
         @media all and (min-width: 577px){
             font-size: 7rem;

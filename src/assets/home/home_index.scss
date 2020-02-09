@@ -3,6 +3,7 @@
 @import 'portfolio';
 @import 'ux';
 @import 'web';
+@import 'clients';
 
 a.discover-link {
     color: $blue-secondary;
@@ -108,5 +109,9 @@ section.portfolio-home, section.ux-home, section.web-home {
 
     .pg-wrapper {
         overflow-x: hidden;
+    }
+
+    h1, h2 {
+        font-family: Abril-Fatface;
     }
 }

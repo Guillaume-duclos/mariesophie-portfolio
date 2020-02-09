@@ -1,0 +1,21 @@
+.clients {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0;
+
+    h2 {
+        font-family: $raleway-bold!important;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 45px;
+        line-height: 53px;
+        color: #4F4F4F;
+    }
+
+    .clients-img-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
