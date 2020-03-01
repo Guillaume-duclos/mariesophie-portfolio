@@ -1,0 +1,312 @@
+.project-section-1 {
+
+    height: 100%;
+
+    h1 {
+        font-family: Abril-Fatface !important;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 133px;
+        line-height: 179px;
+        text-align: left!important;
+        color: #FFDCB6;
+        margin: 0 auto!important;
+        display: block;
+
+        @media all and (min-width: 992px) {
+            display: none;
+        }
+    }
+
+    h1.mobile {
+        text-align: center!important;
+    }
+
+    .projet-img-left {
+        @media all and (min-width: 992px) {
+            margin-left: -15px;
+        }
+    }
+
+    @media all and (min-width: 992px) {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    > div:first-of-type {
+        max-width: 100%;
+
+        @media all and (min-width: 992px) {
+            max-width: 50%;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    > div:last-child {
+
+        @media all and (min-width: 992px) {
+            margin-left: 20px;
+        }
+    }
+
+    > div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        @media all and (min-width: 992px) {
+            display: block;
+        }
+
+        h1 {
+            display: none;
+
+            @media all and (min-width: 992px) {
+                display: block;
+            }
+        }
+
+        h2 {
+            margin: 30px auto!important;
+            font-family: Abril-Fatface;
+            font-style: normal;
+            font-weight: normal;
+            color: #333333 !important;
+
+            @media all and (min-width: 992px) {
+                margin: 30px auto!important;
+                text-align: left!important;
+            }
+
+            &::after {
+                position: absolute;
+                bottom: -35px;
+                left: 0;
+                height: 3px!important;
+                background-color: #00F9FF;
+            }
+        }
+    }
+
+    .button-next-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        width: 100%;
+
+        @media all and (min-width: 992px) {
+            max-width: 400px;
+        }
+    }
+}
+
+.button-left, .button-right {
+    border: 0;
+    background: 0;
+    display: flex;
+    cursor: pointer;
+
+    img {
+        width: 30px;
+        position: relative;
+        z-index: 1;
+    }
+
+    p, a {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 1!important;
+        color: #828282;
+        vertical-align: center;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -8px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+    }
+
+    .p-after-color-1 { &::before { background-color: #5BC2ED; }}
+    .p-after-color-2 { &::before { background-color: #F0F7EF; }}
+    .p-after-color-3 { &::before { background-color: #F9357C; }}
+    .p-after-color-4 { &::before { background-color: #E0E0E0; }}
+    .p-after-color-5 { &::before { background-color: #3CD8FE; }}
+    .p-after-color-6 { &::before { background-color: #BFFFF0; }}
+    .p-after-color-7 { &::before { background-color: #E0DDB2; }}
+    .p-after-color-8 { &::before { background-color: #E4613D; }}
+    .p-after-color-9 { &::before { background-color: #714E64; }}
+    .p-after-color-10 { &::before { background-color: #D6D03E; }}
+    .p-after-color-11 { &::before { background-color: #828282; }}
+    .p-after-color-12 { &::before { background-color: #50E2B5; }}
+    .p-after-color-13 { &::before { background-color: #01B7AE; }}
+    .p-after-color-14 { &::before { background-color: #4F4F4F; }}
+
+    img, p {
+        margin: auto;
+    }
+}
+
+.button-left {
+
+    img {
+        margin-right: 30px;
+    }
+
+    p::before, a::before {
+        left: -43px;
+    }
+}
+
+.button-right {
+
+    img {
+        margin-left: 30px;
+    }
+
+    p::before, a::before {
+        right: -43px;
+    }
+}
+
+.project-section-2 {
+    margin-top: 100px;
+
+    @media all and (min-width: 992px) {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0;
+    }
+
+    h3 {
+        margin: auto;
+        font-family: Abril-Fatface;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 25px;
+        letter-spacing: 0.96em;
+        color: #000000;
+        text-align: center;
+        display: block;
+
+        @media all and (min-width: 992px) {
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+    }
+
+    > div:first-of-type {
+        margin-top: 30px;
+
+        @media all and (min-width: 992px) {
+            margin: auto 0 auto 80px;
+        }
+
+        p {
+            line-height: 25px!important;
+            text-align: center;
+            margin-bottom: 25px;
+
+            @media all and (min-width: 992px) {
+                text-align: left;
+                margin-bottom: 0;
+            }
+        }
+
+        .button-left {
+            display: none;
+            margin-top: 30px;
+
+            img {
+                margin-right: 30px;
+            }
+
+            p::before {
+                left: -43px;
+            }
+
+            @media all and (min-width: 992px) {
+                display: flex;
+            }
+        }
+    }
+
+    > div:last-child {
+        width: 100%;
+        margin: 0;
+
+        @media all and (min-width: 992px) {
+            margin: auto 0 auto 20px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.project-section-3 {
+
+    > div:first-child {
+        display: flex;
+        flex-direction: column-reverse;
+
+        @media all and (min-width: 992px) {
+            flex-direction: row;
+        }
+
+        > div, h3 {
+            margin: auto;
+        }
+
+        > div:first-child {
+            display: flex;
+            justify-content: space-between;
+            width: 500px;
+
+            > div > div {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                margin: auto;
+            }
+        }
+
+        h3 {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 25px;
+            letter-spacing: 0.96em;
+            text-align: center;
+            margin-bottom: 50px;
+
+            @media all and (min-width: 992px) {
+                margin: auto;
+                writing-mode: vertical-lr;
+                text-orientation: mixed;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    > div:last-child {
+
+        img {
+            width: 100%;
+            margin-top: 50px;
+
+            @media all and (min-width: 992px) {
+                max-width: 800px;
+                margin-top: 0;
+            }
+        }
+    }
+}

@@ -177,6 +177,42 @@ const config = {
     new HtmlWebpackPlugin({
       filename: 'dame.html',
       template: 'src/views/dame.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'you-moove.html',
+      template: 'src/views/you-moove.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'paniers-fermiers.html',
+      template: 'src/views/paniers-fermiers.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'beaute-dom.html',
+      template: 'src/views/beaute-dom.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'story-map.html',
+      template: 'src/views/story-map.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'weeb.html',
+      template: 'src/views/weeb.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'pole-dance.html',
+      template: 'src/views/pole-dance.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'paves.html',
+      template: 'src/views/paves.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'impact-track.html',
+      template: 'src/views/impact-track.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'nart.html',
+      template: 'src/views/nart.html'
     })
   ]
 };
