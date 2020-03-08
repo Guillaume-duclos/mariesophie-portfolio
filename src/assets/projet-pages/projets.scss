@@ -1,6 +1,15 @@
 .project-section-1 {
 
-    height: 100%;
+    @media all and (min-width: 992px) {
+        height: calc(100vh - (70px + 54px));
+    }
+
+    > div {
+
+        @media all and (min-width: 992px) {
+            margin: auto;
+        }
+    }
 
     h1 {
         font-family: Abril-Fatface !important;
@@ -23,8 +32,9 @@
     }
 
     .projet-img-left {
+
         @media all and (min-width: 992px) {
-            margin-left: -15px;
+            margin-left: 0;
         }
     }
 
@@ -38,10 +48,18 @@
 
         @media all and (min-width: 992px) {
             max-width: 50%;
+            display: flex!important;
         }
 
         img {
-            width: 100%;
+            margin: auto;
+            max-height: 500px;
+
+            @media all and (min-width: 992px) {
+                margin: auto 20px auto auto;
+                max-width: 100%;
+                max-height: calc(100vh - (70px + 54px + 20px));
+            }
         }
     }
 
@@ -182,7 +200,6 @@
     @media all and (min-width: 992px) {
         display: flex;
         justify-content: space-between;
-        margin-top: 0;
     }
 
     h3 {
@@ -254,6 +271,7 @@
 }
 
 .project-section-3 {
+    margin-top: 100px;
 
     > div:first-child {
         display: flex;

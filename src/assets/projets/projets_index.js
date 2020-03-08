@@ -4,7 +4,7 @@ import ScrollMagic from 'scrollmagic';
 domready(() => {
   const projets = document.querySelector('#projets');
   const magicController = new ScrollMagic.Controller();
-  const isDesktop = window.matchMedia('screen and (min-width: 992px)').matches;
+  const isDesktop = window.matchMedia('screen and (min-width: 20000px)').matches;
 
   if (projets) {
     const projetsBreakpoint = document.querySelector('.projets-page');

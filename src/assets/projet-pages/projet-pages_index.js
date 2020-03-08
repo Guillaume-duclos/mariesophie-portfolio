@@ -5,7 +5,7 @@ import ScrollMagic from 'scrollmagic';
 domready(() => {
   const projetPages = document.querySelector('#projet-pages');
   const magicController = new ScrollMagic.Controller();
-  const isDesktop = window.matchMedia('screen and (min-width: 992px)').matches;
+  const isDesktop = window.matchMedia('screen and (min-width: 20000px)').matches;
 
   if (projetPages) {
     if (isDesktop) {

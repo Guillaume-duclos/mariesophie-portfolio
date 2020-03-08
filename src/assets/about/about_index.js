@@ -5,7 +5,7 @@ import ScrollMagic from 'scrollmagic';
 domready(() => {
   const about = document.querySelector('#about');
   const magicController = new ScrollMagic.Controller();
-  const isDesktop = window.matchMedia('screen and (min-width: 992px)').matches;
+  const isDesktop = window.matchMedia('screen and (min-width: 20000px)').matches;
 
   if (about) {
     if (isDesktop) {

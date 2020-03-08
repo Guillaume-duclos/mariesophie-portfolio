@@ -9,7 +9,7 @@ import ScrollMagic from 'scrollmagic';
 domready(() => {
   const home = document.querySelector('#home');
   const magicController = new ScrollMagic.Controller();
-  const isDesktop = window.matchMedia('screen and (min-width: 992px)').matches;
+  const isDesktop = window.matchMedia('screen and (min-width: 20000px)').matches;
 
   if (home) {
     $('.carousel-indicators li, .carousel-indicators-numbers li, .carousel-indicators-dots li').click(e => {
