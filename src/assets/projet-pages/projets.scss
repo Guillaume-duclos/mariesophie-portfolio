@@ -54,6 +54,7 @@
         img {
             margin: auto;
             max-height: 500px;
+            max-width: 100%;
 
             @media all and (min-width: 992px) {
                 margin: auto 20px auto auto;
