@@ -21,11 +21,11 @@
     <meta name="author" content="Marie-Sophie Echasserieau">
     <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes, initial-scale=1, minimum-scale=1, maximum-scale=5">
     <meta name="theme-color" content="#ffffff">
-    <title>Marie-Sophie Echasseriau | Projets</title>
+    <title>Marie-Sophie Echasseriau | Coherenza</title>
     <link rel="shortcut icon" href="public/icons/favicon.png" type="image/x-icon" />
     <link rel="manifest" href="manifest.json" />
 <link href="app.css" rel="stylesheet"></head>
-<body id="projets">
+<body id="projet-pages">
 <aside id="menu">
     <button class="toggle-aside" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Ouvre le menu">
         <img class="icon-burger" src="public/general/burger.svg" alt="Icon Open Menu" />
@@ -60,10 +60,10 @@
                 <a class="menu-content-nav-item" href="about.html">About</a>
             </div>
             <div class="col-12 col-lg-2 menu-content-nav-item-container">
-                <a class="menu-content-nav-item active" href="projets-tous.html">Projets</a>
-                <a class="menu-content-nav-item subline" href="projets-art.html">Art</a>
-                <a class="menu-content-nav-item subline" href="projets-web.html">Web</a>
-                <a class="menu-content-nav-item subline" href="projets-ux.html">UX</a>
+                <a class="menu-content-nav-item subline" href="projets-tous.html">Projets</a>
+                <a class="menu-content-nav-item subline no-mobile" href="projets-art.html">Art</a>
+                <a class="menu-content-nav-item subline no-mobile" href="projets-web.html">Web</a>
+                <a class="menu-content-nav-item active no-mobile" href="projets-ux.html">UX</a>
             </div>
             <div class="col-12 col-lg-2 menu-content-nav-item-container">
                 <a class="menu-content-nav-item" href="public/cv.pdf" target="_blank">CV</a>
@@ -72,8 +72,9 @@
         </div>
     </div>
 </aside>
-<div id="container">
-    <section class="container-fluid projets-page" data-anchor="1">
+<div id="container" class="common-project">
+
+    <section class="container-fluid projet-pages" data-anchor="1">
         <div class="row row-header">
             <div class="col-12">
                 <header>
@@ -86,7 +87,7 @@
                             <div class="navbar-nav ml-auto navbar-center">
                                 <a class="nav-item nav-link mx-4 him" href="index.html">Home</a>
                                 <a class="nav-item nav-link mx-4 him" href="about.html">About</a>
-                                <a class="nav-item nav-link mx-4 active him" href="projets.html">Projets</a>
+                                <a class="nav-item nav-link mx-4 active him" href="projets-tous.html">Projets</a>
                                 <a class="nav-item nav-link mx-4 him" href="public/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
                             </div>
                         </div>
@@ -94,52 +95,77 @@
                 </header>
             </div>
         </div>
-
-        <div class="project-menu">
-            <ul>
-                <li><a href="projets-tous.html">Tous</a></li>
-                <li><a href="projets-art.html">Art / Identité visuelle</a></li>
-                <li class="active"><a href="projets-ux.html">UX / UI</a></li>
-                <li><a href="projets-web.html">Web</a></li>
-            </ul>
+        <div class="row">
+            <div class="col-12 col-lg-11">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0 mt-4">
+                        <li class="breadcrumb-item"><a class="him" href="index.html">Accueil</a></li>
+                        <li class="breadcrumb-item"><a class="him" href="projets-tous.html">Projets</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Coherenza</li>
+                    </ol>
+                </nav>
+            </div>
         </div>
-
-        <div class="row justify-content-center mt-lg-5 mt-xl-0">
-            <div class="col-6 col-md-4 col-xl-3">
-                <a href="abc.html">
-                    <div class="wrapper-projet-img">
-                        <img data-src="public/projets/pc.png" alt="Projet ABC Terroirs" class="lazyload projet-img" />
-                    </div>
-                </a>
-                <a href="mouvent.html">
-                    <div class="wrapper-projet-img">
-                        <img data-src="public/projets/mouvent.png" alt="Projet Mouvent" class="lazyload projet-img" />
-                    </div>
-                </a>
+        <div class="project-section-1">
+            <h1 class="mobile">UI</h1>
+            <div class="projet-img-left">
+                <img class="lazyload insta" data-src="public/coherenza/coherenza_pc.png" alt="You Moove">
             </div>
-            <div class="col-6 col-md-4 col-xl-3">
-                <a href="paniers-fermiers.html">
-                    <div class="wrapper-projet-img">
-                        <img data-src="public/projets/tel-paniers.png" alt="Projet Les Paniers Fermiers" class="lazyload projet-img" />
-                    </div>
-                </a>
-                <a href="coherenza.html">
-                    <div class="wrapper-projet-img">
-                        <img data-src="public/projets/fond.jpg" alt="Coherenza" class="lazyload projet-img" />
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-md-4 col-xl-3 third-part-projects-img">
-                <div class="wrapper-projet-img decoy"></div>
-                <a href="you-moove.html">
-                    <div class="wrapper-projet-img">
-                        <img data-src="public/projets/devices.png" alt="Projet You Moove" class="lazyload projet-img" />
-                    </div>
-                </a>
+            <div>
+                <h1>UI</h1>
+                <h2>Coherenza</h2>
+                <div class="button-next-container">
+                    <button class="button-left" onclick="window.history.back()">
+                        <img class="lazyload insta" data-src="public/general/button-left.png" alt="You Moove">
+                        <p class="p-after-color-15">Retour</p>
+                    </button>
+                    <button class="button-right">
+                        <a class="p-after-color-15" href="story-map.html">Suivant</a>
+                        <img class="lazyload insta" data-src="public/general/button-right.png" alt="You Moove">
+                    </button>
+                </div>
             </div>
         </div>
     </section>
-    <footer class="container-fluid" data-anchor="2">
+
+    <section class="container-fluid projet-pages project-section-2" data-anchor="2">
+        <h3>Concept</h3>
+        <div>
+            <p>Cohenza est une équipe de formateurs et coach certifiés qui propose différent types de <span style="background-color: #E2116F; color: #ffffff; padding: 0 2px;">coaching.</span>  J’ai travaillé sur la vrefonte de leur site web notamment sur la partie <span style="background-color: #E2116F; color: #ffffff; padding: 0 2px;">ux / ui.</span></p>
+            <button class="button-left" onclick="window.history.back()">
+                <img class="lazyload insta" data-src="public/general/button-left.png" alt="Beauté à Dom">
+                <p class="p-after-color-15">Retour</p>
+            </button>
+        </div>
+        <div>
+            <img class="lazyload insta" data-src="public/coherenza/coherenza_mobile.png" alt="Beauté à Dom">
+        </div>
+    </section>
+
+    <section class="container-fluid projet-pages project-section-3" data-anchor="3">
+        <div>
+            <div>
+                <div>
+                    <div style="background-color: #E2116F;"></div>
+                    <p>#E2116F</p>
+                </div>
+                <div>
+                    <div style="background-color: #620A27"></div>
+                    <p>#620A27</p>
+                </div>
+                <div>
+                    <div style="background-color: #EDE2E6;"></div>
+                    <p>#EDE2E6</p>
+                </div>
+            </div>
+            <h3>Couleurs</h3>
+        </div>
+        <div>
+            <img class="lazyload insta" data-src="public/coherenza/coherenza_imac.png" alt="Beauté à Dom">
+        </div>
+    </section>
+
+    <footer class="container-fluid" data-anchor="6">
         <div class="row h-100">
             <div class="col-12">
                 <h3>Alors on travaille ensemble ?</h3>
@@ -163,12 +189,12 @@
                                     </a>
                                 </li>
                                 <li class="nav-item mr-3">
-                                    <a class="nav-link" href="https://www.instagram.com/marie.s08" target="_blank" rel="noreferrer noopener">
+                                    <a class="nav-link" href="https://www.instagram.com/marie.s08" target="_about" rel="noreferrer noopener">
                                         <img class="lazyload insta" data-src="public/general/insta.png" alt="Instagram">
                                     </a>
                                 </li>
                                 <li class="nav-item ml-1">
-                                    <a class="nav-link" href="https://www.linkedin.com/in/marie-sophie-echasserieau-a69417a5" target="_blank" rel="noreferrer noopener">
+                                    <a class="nav-link" href="https://www.linkedin.com/in/marie-sophie-echasserieau-a69417a5" target="_about" rel="noreferrer noopener">
                                         <img class="lazyload linkedin" data-src="public/general/linkedin.png" alt="Linkedin">
                                     </a>
                                 </li>
