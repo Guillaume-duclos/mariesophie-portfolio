@@ -16,7 +16,24 @@
 
     .clients-img-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
+        flex-wrap: wrap;
+        margin-top: 100px;
+        height: 130px;
+
+        img {
+            display: block;
+            height: 100%;
+            margin: auto 20px;
+
+            /*&:not(:first-child) {
+                margin-left: 20px;
+            }
+
+            &:not(:last-child) {
+                margin-right: 20px;
+            }*/
+        }
     }
 }

@@ -109,7 +109,14 @@ aside#menu {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                height: 100%;
+
+                @media all and (min-width: 992px) {
+                    height: 100%;
+                }
+
+                .no-mobile {
+                    display: none;
+                }
             }
 
             .col-lg-2 {

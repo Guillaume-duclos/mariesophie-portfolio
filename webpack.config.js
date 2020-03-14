@@ -213,6 +213,10 @@ const config = {
     new HtmlWebpackPlugin({
       filename: 'nart.html',
       template: 'src/views/nart.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'coherenza.html',
+      template: 'src/views/coherenza.html'
     })
   ]
 };
