@@ -1,5 +1,9 @@
 .project-section-1 {
 
+    a {
+        text-decoration: none;
+    }
+
     @media all and (min-width: 992px) {
         height: calc(100vh - (70px + 54px));
     }
